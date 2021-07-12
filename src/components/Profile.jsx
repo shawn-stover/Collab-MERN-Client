@@ -2,11 +2,14 @@ import { useState, useEffect } from "react"
 import { Redirect } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
+import Cal from './Cal'
+
 
 
 export default function Profile(props) {
     //state is information from the server
     const [message, setMessage] = useState('')
+  
 
     //hit the auth locked route on the backend
     useEffect(() => {
@@ -45,6 +48,8 @@ export default function Profile(props) {
                 <p>You have a secret message from the authorized user area!</p>
 
                 <p>{message}</p>
+                
+                <Cal />
             </div>
         </div>
     )
