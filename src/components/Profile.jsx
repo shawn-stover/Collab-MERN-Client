@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import { Redirect } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
-import Cal from './Cal'
-
+import CalendarView from './calendar/CalendarView'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 export default function Profile(props) {
@@ -49,7 +49,9 @@ export default function Profile(props) {
 
                 <p>{message}</p>
                 
-                <Cal />
+                <CalendarView />
+                
+                
             </div>
         </div>
     )
