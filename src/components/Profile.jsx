@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
 import Cal from './Cal'
+import Weather from './Weather'
 
 
 
@@ -49,6 +50,7 @@ export default function Profile(props) {
 
                 <p>{message}</p>
                 
+                <Weather />
                 <Cal />
             </div>
         </div>
