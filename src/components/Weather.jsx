@@ -8,16 +8,20 @@ export default function Weather() {
         lang: 'en',
         unit: 'imperial', // values are (metric, standard, imperial)
       });
+
+     
      
       return (
-        <ReactWeather
-          isLoading={isLoading}
-          errorMessage={errorMessage}
-          data={data}
-          lang="en"
-          locationLabel="Seattle"
-          unitsLabels={{ temperature: 'F', windSpeed: 'm/hr' }}
-          showForecast
-        />
+        <div className='weatherContainer' style={{width: '300px'}}>
+            <ReactWeather
+                isLoading={isLoading}
+                errorMessage={errorMessage}
+                data={data}
+                lang="en"
+                locationLabel="Seattle"
+                unitsLabels={{ temperature: 'F', windSpeed: 'm/hr' }}
+                showForecast
+            />
+        </div>
       );
 }
