@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
-// import { COLORS, dateColors } from "../Constants";
+import axios from 'axios'
 import Cal from './Cal'
 import NewEvent from "./NewEvent"
 import { useHistory } from "react-router-dom";
@@ -18,9 +18,9 @@ export default function CalendarView() {
 
     useEffect(() => {
         setStatus("loading");
-        fetch(`/events/month/${currentMonth}`)
-          .then((res) => res.json())
+        axios.get(`/events/month/${currentMonth}`)
           .then((res) => {
+            console.log(res.data)
             setMonthEvents(res.data);
             setStatus("idle");
           })
@@ -32,9 +32,9 @@ export default function CalendarView() {
       const getEventsAfterCreate = async () => {
         setStatus("loading");
     
-        await fetch(`/events/month/${currentMonth}`)
-          .then((res) => res.json())
+        await axios.get(`/events/month/${currentMonth}`)
           .then((res) => {
+            console.log(res.data)
             setMonthEvents(res.data);
             setStatus("idle");
           })
