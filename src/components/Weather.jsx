@@ -12,7 +12,7 @@ export default function Weather() {
      
      
       return (
-        <div className='weatherContainer' style={{width: '300px'}}>
+        <div className='weatherContainer' style={{width: '300px', height: '430px'}}>
             <ReactWeather
                 isLoading={isLoading}
                 errorMessage={errorMessage}
@@ -20,7 +20,7 @@ export default function Weather() {
                 lang="en"
                 locationLabel="Seattle"
                 unitsLabels={{ temperature: 'F', windSpeed: 'm/hr' }}
-                showForecast
+               
             />
         </div>
       );
