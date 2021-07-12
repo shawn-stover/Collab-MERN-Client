@@ -3,7 +3,7 @@ import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import { useHistory } from "react-router-dom";
 import { format } from "date-fns";
-// import styled from "styled-components";
+import styled from "styled-components";
 
 
 
@@ -25,7 +25,7 @@ export default function Cal({updateCurrentMonth}) {
   
     return(
         <div>
-            
+            <Wrapper>
             <Calendar
                  tileContent={tileContent}
                  onChange={onChange}
@@ -37,57 +37,57 @@ export default function Cal({updateCurrentMonth}) {
                  onActiveStartDateChange={({ activeStartDate, value, view }) => {
                    updateCurrentMonth(activeStartDate.getMonth());}
                 }/>
-            
+            </Wrapper>
         </div>
     )
 }
-// const Wrapper = styled.div`
-//   .react-calendar {
-//     max-width: 100%;
-//     background: white;
-//     line-height: 2em;
-//     text-align: center;
-//   }
-//   .react-calendar button {
-//     border: none;
-//     outline: none;
-//     font-size: 1.3rem;
-//   }
-//   .react-calendar__month-view__weekdays {
-//     text-align: center;
-//     font-weight: 400;
-//     font-size: 1.1em;
-//   }
-//   .react-calendar__month-view__weekdays__weekday abbr {
-//     text-decoration: none;
-//   }
-//   .react-calendar__tile {
-//     max-width: 14vw;
-//     height: 14vw;
-//     text-align: center;
-//     padding: 0.6em 0em;
-//     background-color: white;
-//     border-radius: 50px;
-//   }
-//   .react-calendar__navigation {
-//     height: 2.5rem;
-//     margin-bottom: 10px;
-//   }
+const Wrapper = styled.div`
+  .react-calendar {
+    max-width: 100%;
+    background: white;
+    line-height: 2em;
+    text-align: center;
+  }
+  .react-calendar button {
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+  }
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.1em;
+  }
+  .react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none;
+  }
+  .react-calendar__tile {
+    max-width: 14vw;
+    height: 14vw;
+    text-align: center;
+    padding: 0.6em 0em;
+    background-color: white;
+    border-radius: 50px;
+  }
+  .react-calendar__navigation {
+    height: 2.5rem;
+    margin-bottom: 10px;
+  }
 
-//   .react-calendar__navigation button {
-//     min-width: 40px;
-//     background: white;
-//     font-size: 1.4rem;
-//     padding: 0;
-//     margin: 0 3px;
-//     border: none;
-//     text-transform: lowercase;
-//   }
-//   .react-calendar__month-view__days__day--neighboringMonth {
-//     color: #c1c7c3;
-//   }
-//   .react-calendar__tile--active {
-//     background: #006edc;
-//     color: white;
-//   }
-// `;
+  .react-calendar__navigation button {
+    min-width: 40px;
+    background: white;
+    font-size: 1.4rem;
+    padding: 0;
+    margin: 0 3px;
+    border: none;
+    text-transform: lowercase;
+  }
+  .react-calendar__month-view__days__day--neighboringMonth {
+    color: #c1c7c3;
+  }
+  .react-calendar__tile--active {
+    background: #006edc;
+    color: white;
+  }
+`;

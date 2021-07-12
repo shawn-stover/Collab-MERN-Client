@@ -21,7 +21,7 @@ const [open, setOpen] = React.useState(false);
 
     return(
         <div>
-             <Button onClick={handleClickOpen}>+</Button>
+             <Button onClick={handleClickOpen}>➕</Button>
         <Dialog
         fullScreen
         open={open}

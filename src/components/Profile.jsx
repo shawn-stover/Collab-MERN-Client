@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
 import CalendarView from './calendar/CalendarView'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 export default function Profile(props) {
@@ -45,7 +44,7 @@ export default function Profile(props) {
             <h5>your email is {props.currentUser.email}</h5>
 
             <div>
-                <p>You have a secret message from the authorized user area!</p>
+            <p>You have a secret message from the authorized user area!</p>
 
                 <p>{message}</p>
                 
