@@ -27,7 +27,7 @@ export default function CalendarView() {
           .catch((error) => console.log("error!", error));
       }, [currentMonth]);
     
-      let colorIndex = -1;
+      
     
       const getEventsAfterCreate = async () => {
         setStatus("loading");
@@ -143,9 +143,6 @@ const NoEventsSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-const AddEventImg = styled.img`
-  max-width: 90vw;
 `;
 
 const EventsSection = styled.div``;
