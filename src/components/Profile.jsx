@@ -2,8 +2,7 @@ import { useState, useEffect } from "react"
 import { Redirect } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
-import Cal from './Cal'
-
+import CalendarView from './calendar/CalendarView'
 
 
 export default function Profile(props) {
@@ -45,11 +44,13 @@ export default function Profile(props) {
             <h5>your email is {props.currentUser.email}</h5>
 
             <div>
-                <p>You have a secret message from the authorized user area!</p>
+            <p>You have a secret message from the authorized user area!</p>
 
                 <p>{message}</p>
                 
-                <Cal />
+                <CalendarView />
+                
+                
             </div>
         </div>
     )
