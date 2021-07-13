@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from "styled-components";
+import { AiOutlineHome } from "react-icons/ai";
 
 export default function Navbar(props) {
     // console.log(`props of navbar:`, props)
@@ -29,9 +30,9 @@ export default function Navbar(props) {
     )
 
     return(
-        <nav>
+        <Nav>
             <Link to="/">
-                Home
+            <AiOutlineHome className="home" fontSize="large"/>
             </Link>
             
            
@@ -40,7 +41,7 @@ export default function Navbar(props) {
            <Search>
                <input type="text" className="search"></input><input type="button" className="button" value="🔎"></input>
            </Search>
-        </nav>
+        </Nav>
     )
 }
 const Search = styled.form`
@@ -62,5 +63,12 @@ const Search = styled.form`
         border: none;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
+    }
+`
+const Nav = styled.nav`
+    .home {
+        width: 50px;
+        height: 30px;
+        color: black;
     }
 `
