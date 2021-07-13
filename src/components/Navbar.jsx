@@ -38,11 +38,29 @@ export default function Navbar(props) {
             {props.currentUser ? loggedIn : loggedOut}
            
            <Search>
-               <input type="text" id="search" value="search"></input><input type="button" value="🔎"></input>
+               <input type="text" className="search"></input><input type="button" className="button" value="🔎"></input>
            </Search>
         </nav>
     )
 }
 const Search = styled.form`
-    dplay: inline;
+    display: flex;
+    justify-content: center;
+    padding-right: 50px;
+    .search {
+        color: white;
+        width: 400px;
+        height: 30px;
+        border: none;
+        background: rgba(145, 145, 145, 0.555);
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    .button {
+        color: white;
+        background: rgba(145, 145, 145, 0.555);
+        border: none;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
 `
