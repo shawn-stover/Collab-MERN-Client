@@ -59,9 +59,9 @@ export default function Profile(props) {
             <Weather />
 
             <h2>Welcome, {props.currentUser.name}👋</h2>
-            {/* <Link to="/calendar">Calendar</Link> */}
-            {/* <h5>your email is {props.currentUser.email}</h5> */}
 
+
+                <div className='itineraryContainer'>
             <Events>
                 <Link to="/calendar">Calendar</Link>
               <h3>Today's Schedule:</h3>
@@ -70,6 +70,7 @@ export default function Profile(props) {
               <h5><span>2:00pm</span> - Meeting with Brian</h5>
               <h5><span>5:00pm</span> - Pickup Jenny</h5>
             </Events>
+              </div>
         </div>
     )
 }
