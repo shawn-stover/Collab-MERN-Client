@@ -4,7 +4,7 @@ import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Register from './components/Register'
 import Welcome from './components/Welcome'
-import Title from './components/Title'
+
 // import SignUp_In from './components/SignUp_In'
 
 import {
@@ -49,7 +49,6 @@ function App() {
 
   return (
     <Router>
-      {/* <Title /> */}
       {/* <SignUp_In /> */}
       <header>
         <Navbar currentUser= {currentUser} handleLogout={handleLogout}/>
