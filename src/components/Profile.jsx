@@ -53,6 +53,9 @@ export default function Profile(props) {
 
                 <p>{message}</p> 
                 
+
+             </div>
+
                 
                 <Events>
                 <Link to="/calendar">Calendar</Link>
@@ -66,6 +69,7 @@ export default function Profile(props) {
                 
             </div>
              
+
         </div>
     )
 }
