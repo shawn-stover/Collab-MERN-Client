@@ -1,27 +1,38 @@
-import ReactWeather, { useOpenWeather } from 'react-open-weather'
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function Weather() {
-    const { data, isLoading, errorMessage } = useOpenWeather({
-        key: `${process.env.REACT_APP_WEATHER_API}`,
-        lat: '47.6062',
-        lon: '122.3321',
-        lang: 'en',
-        unit: 'imperial', // values are (metric, standard, imperial)
-      });
-
-     
+    const [weather, setWeather] = useState()
+    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=London&units=imperial&appid=${process.env.REACT_APP_WEATHER_API}`
+    
+      const getWeather = async () => {
+         try{
+             const response = await axios.get(apiUrl) 
+             setWeather(response.data)
+             
+             console.log(response.data)
+         } catch(error) {
+             console.log(error)
+         }
+      }
+      
+        useEffect(() => {
+            getWeather()
+        }, [])
+       
+        if(!weather) {
+            return(
+              <div>
+                    <h1>Loading</h1>
+              </div>
+            )
+        }
      
       return (
-        <div className='weatherContainer' style={{width: '300px', height: '430px'}}>
-            <ReactWeather
-                isLoading={isLoading}
-                errorMessage={errorMessage}
-                data={data}
-                lang="en"
-                locationLabel="Seattle"
-                unitsLabels={{ temperature: 'F', windSpeed: 'm/hr' }}
-               
-            />
+        <div >
+            <h1>Weather</h1>
+            <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+            <p>{weather.weather[0].main}<br/>{weather.main.temp}<br/>{weather.main.temp_min}<br />{weather.main.temp_max}</p>
         </div>
       );
 }
