@@ -43,6 +43,7 @@ export default function Profile(props) {
     if(!props.currentUser) return <Redirect to='/login' component={Login} currentUser= {props.currentUser}/>
     return(
         <div>
+            <Weather />
             <h4>Greetings! {props.currentUser.name}👋</h4>
             <h5>your email is {props.currentUser.email}</h5>
 
