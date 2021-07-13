@@ -29,10 +29,10 @@ export default function Cal({updateCurrentMonth}) {
             <Events>
               <h3>Upcoming Events</h3>
               <br></br>
-              <h5><span>10:00am </span>- Brunch with Bill</h5>
-              <h5><span>12:00pm</span> - Lunch with Jill</h5>
-              <h5><span>2:00pm</span> - Meeting with Brian</h5>
-              <h5><span>5:00pm</span> - Pickup Jenny</h5>
+              <h5 className="event"><span>10:00am </span>- Brunch with Bill</h5>
+              <h5 className="event"><span>12:00pm</span> - Lunch with Jill</h5>
+              <h5 className="event"><span>2:00pm</span> - Meeting with Brian</h5>
+              <h5 className="event"><span>5:00pm</span> - Pickup Jenny</h5>
             </Events>
             <Calendar
                  tileContent={tileContent}
@@ -56,8 +56,8 @@ const Events = styled.div`
       margin: 5px 0px;
       padding: 10px 0px;
     }
-    .h5 {
-      padding: 5px 0px;
+    &:hover {
+      text-decoration: underline;
     }
 `
 const Wrapper = styled.div`
