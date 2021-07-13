@@ -79,7 +79,7 @@ function App() {
           path="/profile"
           render={ props => currentUser ? <Profile {...props} currentUser= {currentUser} handleLogout= {handleLogout}/> : <Redirect to="/login" />}
         />
-
+        
         </Switch>  
       </div>
     </Router>
