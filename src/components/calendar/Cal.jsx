@@ -34,6 +34,28 @@ export default function Cal({updateCurrentMonth}) {
               <h5 className="event"><span>2:00pm</span> - Meeting with Brian</h5>
               <h5 className="event"><span>5:00pm</span> - Pickup Jenny</h5>
             </Events>
+            <People>
+              <label for='checkboxBill'>
+                Bill
+              </label>
+              <input type='checkbox' name='checkboxBill' />
+              <br></br>
+              <label for='checkboxJill'>
+                Jill
+              </label>
+              <input type='checkbox' name='checkboxJill' />
+              <br></br>
+              <label for='checkboxBrian'>
+                Brian
+              </label>
+              <input type='checkbox' name='checkboxBrian' />
+              <br></br>
+              <label for='checkboxJenny'>
+                Jenny
+              </label>
+              <input type='checkbox' name='checkboxJenny' />
+              <br></br>
+            </People>
             <Calendar
                  tileContent={tileContent}
                  onChange={onChange}
@@ -49,6 +71,18 @@ export default function Cal({updateCurrentMonth}) {
         
     )
 }
+const People = styled.div`
+    width: 190px;
+    margin: 10px 0px;
+    .h3 {
+      margin: 5px 0px;
+      padding: 10px 0px;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+`
+
 const Events = styled.div`
     width: 190px;
     margin: 10px 0px;
