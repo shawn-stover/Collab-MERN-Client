@@ -90,9 +90,9 @@ export default function NewEventTime({ form, setForm }) {
     
     return(
         <div> 
-             <>
+             <div>
       <FormControl>
-        <h4 className="TimeLabel">Time</h4>{" "}
+        <h2 className="TimeLabel">Time</h2>{" "}
         <div className="AllDaySection">
           <input
             type="checkbox"
@@ -143,7 +143,7 @@ export default function NewEventTime({ form, setForm }) {
           <option>PM</option>
         </Select>
       </div>
-    </>
+    </div>
         </div>
     )
 }

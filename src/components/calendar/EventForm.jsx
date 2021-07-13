@@ -126,12 +126,12 @@ export default function EventForm({ closeDialog, refreshEvents }) {
           <Top>
             <Title
               type="text"
-              placeholder="Your event title"
+              placeholder="Event Title"
               onChange={(ev) => handleTitle(ev.target.value)}
             />
             <Description
               type="text"
-              placeholder="What will happen?"
+              placeholder="Event Details"
               onChange={(ev) => handleDescription(ev.target.value)}
             />
           </Top>
@@ -233,7 +233,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #f6f7f6;
+    background-color: whitesmoke;
     padding-top: 50px;
     padding-bottom: 30px;
   `;
@@ -242,26 +242,25 @@ export default function EventForm({ closeDialog, refreshEvents }) {
     padding-top: 30px;
     padding-bottom: 15px;
     width: 100vw;
+    background-color: whitesmoke;
+   
   `;
   const ButtonCreate = styled.button`
     border: none;
-    background-color: red;
+    background-color: rgb(42,82,190);
     color: white;
     font-size: 1.5rem;
     font-weight: 400;
     margin: 0 10px;
     width: 160px;
     height: 40px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    &:disabled {
-      opacity: 0.3;
-    }
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);  
     z-index: -1;
   `;
   
   const ButtonClose = styled.button`
     border: none;
-    background-color: red;
+    background-color: whitesmoke;
     color: white;
     font-size: 1.3rem;
     line-height: 1rem;
@@ -271,6 +270,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
     margin: 0 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     border-radius: 50px;
+    margin-right: 30px;
   `;
   
   const Title = styled.input`
@@ -310,10 +310,12 @@ export default function EventForm({ closeDialog, refreshEvents }) {
     box-sizing: border-box;
     border-top: 1px solid #b3b3b3;
     padding: 15px 20px;
+    background-color: whitesmoke;
     .dateNTimeInputSection {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      
     }
   `;
   
