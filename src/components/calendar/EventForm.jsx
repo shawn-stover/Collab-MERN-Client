@@ -3,13 +3,11 @@ import styled from "styled-components";
 import { format } from "date-fns";
 import NewEventCalendar from "./NewEventCalendar";
 import NewEventTime from "./NewEventTime";
-import { Button, Input } from "@material-ui/core";
 import { FiCalendar } from "react-icons/fi";
 import { BsArrowRight } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
 import { RiNotification2Line } from "react-icons/ri";
 import { GrClose } from "react-icons/gr";
-import { FormControl } from '@material-ui/core'
 import { FcCheckmark } from "react-icons/fc";
 
 const INITIAL_EVENT = {
