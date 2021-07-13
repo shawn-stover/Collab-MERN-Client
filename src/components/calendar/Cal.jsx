@@ -43,7 +43,7 @@ export default function Cal({updateCurrentMonth}) {
 }
 const Wrapper = styled.div`
   .react-calendar {
-    max-width: 100%;
+    width: 600px;
     background: white;
     line-height: 2em;
     text-align: center;
@@ -62,12 +62,12 @@ const Wrapper = styled.div`
     text-decoration: none;
   }
   .react-calendar__tile {
-    max-width: 14vw;
-    height: 14vw;
+    width: 50px;
+    height: 50px;
     text-align: center;
-    padding: 0.6em 0em;
+    padding: 0.7em 0.7em;
     background-color: white;
-    border-radius: 50px;
+    border-radius: 10px;
   }
   .react-calendar__navigation {
     height: 2.5rem;
