@@ -20,6 +20,7 @@ import {
 } from 'react'
 
 import jwt from 'jsonwebtoken'
+import CalendarView from './components/calendar/CalendarView';
 
 function App() {
   //state holds the user data if the user is logged in
@@ -79,7 +80,9 @@ function App() {
           path="/profile"
           render={ props => currentUser ? <Profile {...props} currentUser= {currentUser} handleLogout= {handleLogout}/> : <Redirect to="/login" />}
         />
-        
+        <Route 
+        path="/calendar" 
+        component={CalendarView}/>
         </Switch>  
       </div>
     </Router>
