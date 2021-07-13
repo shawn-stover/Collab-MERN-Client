@@ -32,6 +32,7 @@ export default function Navbar(props) {
             <Link to="/">
                 Home
             </Link>
+            
            
             {props.currentUser ? loggedIn : loggedOut}
            

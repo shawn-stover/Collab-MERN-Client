@@ -18,8 +18,8 @@ const INITIAL_EVENT = {
     description: "",
     location: "",
     creator: {
-      name: "",
-      userId: "",
+      name: "example",
+      userId: "01",
     },
     start: {
       date: null,

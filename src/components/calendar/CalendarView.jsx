@@ -5,7 +5,7 @@ import Cal from './Cal'
 import NewEvent from "./NewEvent"
 import { useHistory } from "react-router-dom";
 import { format } from "date-fns";
-//import { AiOutlineHome } from "react-icons/ai";
+
 //import { BiArrowBack } from "react-icons/bi";
 
 export default function CalendarView() {
@@ -18,12 +18,12 @@ export default function CalendarView() {
 
     useEffect(() => {
         setStatus("loading");
-        axios.get(`/events/month/${currentMonth}`)
+        fetch(`/events/month/${currentMonth}`)
+          .then((res) => res.json())
           .then((res) => {
-            console.log(res.data)
             setMonthEvents(res.data);
-            setStatus("idle");
-          })
+            setStatus("idle")
+         })
           .catch((error) => console.log("error!", error));
       }, [currentMonth]);
     
@@ -32,7 +32,8 @@ export default function CalendarView() {
       const getEventsAfterCreate = async () => {
         setStatus("loading");
     
-        await axios.get(`/events/month/${currentMonth}`)
+        await fetch(`/events/month/${currentMonth}`)
+          .then((res) => res.json())
           .then((res) => {
             console.log(res.data)
             setMonthEvents(res.data);
@@ -45,18 +46,18 @@ export default function CalendarView() {
             <NewEvent refreshEvents={getEventsAfterCreate} />
             <Tabs>
         
-        <TabItem onClick={() => history.push("/calendar-month")}>month</TabItem>
+        <TabItem onClick={() => history.push("/calendar-month")}>Monthly</TabItem>
         <TabItem
           onClick={() => history.push(`/week/${format(new Date(), "y-MM-dd")}`)}
-          style={{ backgroundColor: "#e6e6e6" }}
+          style={{ backgroundColor: "white" }}
         >
-          week
+          Weekly
         </TabItem>
         <TabItem
-          style={{ backgroundColor: "#e6e6e6" }}
+          style={{ backgroundColor: "white" }}
           onClick={() => history.push(`/date/${format(new Date(), "y-MM-dd")}`)}
         >
-          Day
+          Daily
         </TabItem>
       </Tabs>
       <Cal updateCurrentMonth={updateCurrentMonth} />
@@ -87,6 +88,7 @@ export default function CalendarView() {
                   {ev.events.map((meeting) => (
                     <div>
                       <EventTitle >
+                        Soccer Practice
                         {"‣ "}
                         {meeting.title}
                       </EventTitle>
@@ -103,15 +105,9 @@ export default function CalendarView() {
 }  
 const Wrapper = styled.div`
   min-height: 100vh;
-  background-color: grey;
+  background-color: white;
 `;
-// const NavIcon = styled.div`
-//   padding: 0 5px;
-//   color: rgb(222, 87, 102);
-//   border: 1px solid rgb(222, 87, 102);
-//   border-radius: 4px;
-//   margin: 0 3px;
-// `;
+
 const Tabs = styled.div`
   display: flex;
   flex-direction: row;
@@ -121,7 +117,7 @@ const Tabs = styled.div`
 const TabItem = styled.div`
   flex-grow: 1;
   text-align: center;
-  background-color: #e6e6e6;
+  background-color: white;
   border: 1px solid #cedefd;
   color: black;
   text-transform: uppercase;
