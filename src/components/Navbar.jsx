@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import styled from "styled-components";
 
 export default function Navbar(props) {
     // console.log(`props of navbar:`, props)
@@ -36,6 +37,12 @@ export default function Navbar(props) {
            
             {props.currentUser ? loggedIn : loggedOut}
            
+           <Search>
+               <input type="text" id="search" value="search"></input><input type="button" value="🔎"></input>
+           </Search>
         </nav>
     )
 }
+const Search = styled.form`
+    dplay: inline;
+`
