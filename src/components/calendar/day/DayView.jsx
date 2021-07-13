@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import styled from "styled-components";
-import DateSection from "./DateSection";
 import { GrLocation } from "react-icons/gr";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
 import NewEvent from "../NewEvent"
+import DateSection from "./DateSection";
+import NoEventToday from "./NoEventToday";
 
 export default function DayView() {
     const [dayEvents, setDayEvents] = useState([]);
@@ -39,8 +40,8 @@ export default function DayView() {
           .catch((error) => console.log("error!", error));
       };
     return(
-        <div>
-          <NewEventDialog refreshEvents={getDayEventsAfterDeleteAdd} />
+        <Wrapper>
+          <NewEvent refreshEvents={getDayEventsAfterDeleteAdd} />
       <Tabs>
         <NavIcon>
           <AiOutlineHome onClick={() => history.push("/")} size={30} />
@@ -50,12 +51,12 @@ export default function DayView() {
         </NavIcon>
         <TabItem
           onClick={() => history.push("/calendar-month")}
-          style={{ backgroundColor: "#b5cdfd" }}
+          style={{ backgroundColor: "white" }}
         >
           month
         </TabItem>
         <TabItem
-          style={{ backgroundColor: "#b5cdfd" }}
+          style={{ backgroundColor: "white" }}
           onClick={() => history.push(`/week/${params.date}`)}
         >
           week
@@ -63,10 +64,14 @@ export default function DayView() {
         <TabItem>Day</TabItem>
       </Tabs>
       <DateSection today={today} />
-        </div>
+      <NoEventToday />
+        </Wrapper>
     )
 }
+const Wrapper = styled.div`
+  min-height: 100vh;
 
+`;
 const Tabs = styled.div`
   display: flex;
   flex-direction: row;
@@ -99,4 +104,3 @@ const ContentSection = styled.div`
   top: 200px;
   width: 100vw;
 `;
-export default DayView;
