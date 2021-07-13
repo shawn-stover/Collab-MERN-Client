@@ -45,17 +45,15 @@ export default function Profile(props) {
         <div>
             <Weather />
             <h4>Greetings! {props.currentUser.name}👋</h4>
+            <Link to="/calendar">Calendar</Link>
             <h5>your email is {props.currentUser.email}</h5>
 
             <div>
             <p>You have a secret message from the authorized user area!</p>
 
-                <p>{message}</p>
+                <p>{message}</p> 
                 
-                <Link to="/calendar">Calendar</Link>
-                
-                
-            </div>
+             </div>
         </div>
     )
 }
