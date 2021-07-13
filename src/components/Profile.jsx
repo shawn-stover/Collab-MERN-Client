@@ -2,7 +2,9 @@ import { useState, useEffect } from "react"
 import { Redirect, Link } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
+import Cal from './Cal'
 import CalendarView from './calendar/CalendarView'
+
 
 
 export default function Profile(props) {
