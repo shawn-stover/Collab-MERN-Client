@@ -15,6 +15,10 @@ export default function Profile(props) {
     const Events = styled.div`
     width: 190px;
     margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .h2 {
       margin: 5px 0px;
       padding: 10px 0px;
