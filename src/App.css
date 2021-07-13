@@ -1,7 +1,41 @@
 .App {
   text-align: center;
+  background-color: lavenderblush;
 }
+  /* height: 100%;
+  
 
+
+body {
+  /* background-image: url('./login.jpeg');
+  background-size: cover; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  
+ 
+/* } */ 
+
+/* .container {
+  background-image: url('./login.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 30px 0 30px;
+  height: 100%; */
+  
+  
+/* }
+
+label { 
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+} */
+
+
+/* form {
+  margin-top: 300px;
+} */
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -2,8 +2,10 @@ import './App.css';
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
-import Register from './components/Reqister'
+import Register from './components/Register'
 import Welcome from './components/Welcome'
+
+// import SignUp_In from './components/SignUp_In'
 
 import {
   BrowserRouter as Router,
@@ -18,6 +20,7 @@ import {
 } from 'react'
 
 import jwt from 'jsonwebtoken'
+import CalendarView from './components/calendar/CalendarView';
 
 function App() {
   //state holds the user data if the user is logged in
@@ -47,6 +50,7 @@ function App() {
 
   return (
     <Router>
+      {/* <SignUp_In /> */}
       <header>
         <Navbar currentUser= {currentUser} handleLogout={handleLogout}/>
       </header>
@@ -75,7 +79,9 @@ function App() {
           path="/profile"
           render={ props => currentUser ? <Profile {...props} currentUser= {currentUser} handleLogout= {handleLogout}/> : <Redirect to="/login" />}
         />
-
+        <Route 
+        path="/calendar" 
+        component={CalendarView}/>
         </Switch>  
       </div>
     </Router>
