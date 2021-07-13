@@ -24,8 +24,16 @@ export default function Cal({updateCurrentMonth}) {
       view === "month" && date.getDay() === 2 ? <p></p> : null;
   
     return(
-        <div>
+        
             <Wrapper>
+            <Events>
+              <h3>Upcoming Events</h3>
+              <br></br>
+              <h5 className="event"><span>10:00am </span>- Brunch with Bill</h5>
+              <h5 className="event"><span>12:00pm</span> - Lunch with Jill</h5>
+              <h5 className="event"><span>2:00pm</span> - Meeting with Brian</h5>
+              <h5 className="event"><span>5:00pm</span> - Pickup Jenny</h5>
+            </Events>
             <Calendar
                  tileContent={tileContent}
                  onChange={onChange}
@@ -38,12 +46,27 @@ export default function Cal({updateCurrentMonth}) {
                    updateCurrentMonth(activeStartDate.getMonth());}
                 }/>
             </Wrapper>
-        </div>
+        
     )
 }
+const Events = styled.div`
+    width: 190px;
+    margin: 10px 0px;
+    .h3 {
+      margin: 5px 0px;
+      padding: 10px 0px;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+`
 const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-around;
   .react-calendar {
-    width: 600px;
+    width: 700px;
+    height: 500px;
+    border: none;
     background: white;
     line-height: 2em;
     text-align: center;
@@ -62,10 +85,10 @@ const Wrapper = styled.div`
     text-decoration: none;
   }
   .react-calendar__tile {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 75px;
     text-align: center;
-    padding: 0.7em 0.7em;
+    padding: 0.6em 0em;
     background-color: white;
     border-radius: 10px;
   }

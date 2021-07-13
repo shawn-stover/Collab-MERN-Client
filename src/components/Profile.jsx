@@ -2,9 +2,9 @@ import { useState, useEffect } from "react"
 import { Redirect, Link } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
-import Cal from './calendar/Cal'
 import CalendarView from './calendar/CalendarView'
 import Weather from './Weather'
+import styled from "styled-components";
 
 
 
@@ -53,7 +53,37 @@ export default function Profile(props) {
 
                 <p>{message}</p> 
                 
+
              </div>
+
+                
+                <Events>
+                <Link to="/calendar">Calendar</Link>
+              <h2>Today's Schedule:</h2>
+              <h5><span>10:00am </span>- Brunch with Bill</h5>
+              <h5><span>12:00pm</span> - Lunch with Jill</h5>
+              <h5><span>2:00pm</span> - Meeting with Brian</h5>
+              <h5><span>5:00pm</span> - Pickup Jenny</h5>
+            </Events>
+                
+                
+            </div>
+             
+
         </div>
     )
 }
+const Events = styled.div`
+    width: 190px;
+    margin: 10px 0px;
+    .h2 {
+      margin: 5px 0px;
+      padding: 10px 0px;
+    }
+    .h5 {
+      padding: 5px 0px;
+    }
+    &:hover {
+        text-decoration: underline;
+      }
+`

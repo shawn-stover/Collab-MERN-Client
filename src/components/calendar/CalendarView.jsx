@@ -88,7 +88,6 @@ export default function CalendarView() {
                   {ev.events.map((meeting) => (
                     <div>
                       <EventTitle >
-                        Soccer Practice
                         {"‣ "}
                         {meeting.title}
                       </EventTitle>
@@ -118,11 +117,9 @@ const TabItem = styled.div`
   flex-grow: 1;
   text-align: center;
   background-color: white;
-  border: 1px solid #cedefd;
   color: black;
-  text-transform: uppercase;
-  border-bottom: none;
-  padding: 6px 0;
+  margin-bottom: 20px;
+  padding: 20px 0;
   font-size: 1.2rem;
 `;
 const NoEventsSection = styled.div`
