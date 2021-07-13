@@ -14,7 +14,11 @@
   margin: 40px;
 }
 
-  
+.itineraryContainer {
+  display: block;
+  margin-left: 850px;
+}  
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
