@@ -12,6 +12,20 @@ export default function Profile(props) {
     //state is information from the server
     const [message, setMessage] = useState('')
   
+    const Events = styled.div`
+    width: 190px;
+    margin: 10px 0px;
+    .h2 {
+      margin: 5px 0px;
+      padding: 10px 0px;
+    }
+    .h5 {
+      padding: 5px 0px;
+    }
+    &:hover {
+        text-decoration: underline;
+      }
+`
 
     //hit the auth locked route on the backend
     useEffect(() => {
@@ -51,13 +65,11 @@ export default function Profile(props) {
             <div>
             <p>You have a secret message from the authorized user area!</p>
 
-                <p>{message}</p> 
-                
-
-             </div>
+            <p>{message}</p> 
+            </div>
 
                 
-                <Events>
+            <Events>
                 <Link to="/calendar">Calendar</Link>
               <h2>Today's Schedule:</h2>
               <h5><span>10:00am </span>- Brunch with Bill</h5>
@@ -67,23 +79,6 @@ export default function Profile(props) {
             </Events>
                 
                 
-            </div>
-             
-
-        </div>
+        </div>     
     )
 }
-const Events = styled.div`
-    width: 190px;
-    margin: 10px 0px;
-    .h2 {
-      margin: 5px 0px;
-      padding: 10px 0px;
-    }
-    .h5 {
-      padding: 5px 0px;
-    }
-    &:hover {
-        text-decoration: underline;
-      }
-`
