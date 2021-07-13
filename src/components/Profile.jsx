@@ -60,7 +60,7 @@ export default function Profile(props) {
 
             <h2>Welcome, {props.currentUser.name}👋</h2>
             {/* <Link to="/calendar">Calendar</Link> */}
-            {/* <h5>your email is {props.currentUser.email}</h5>
+            {/* <h5>your email is {props.currentUser.email}</h5> */}
 
             <Events>
                 <Link to="/calendar">Calendar</Link>
