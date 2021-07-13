@@ -8,11 +8,13 @@
   font-weight: normal;
 }
 
- 
+.boxContainer {
+  display: flex;
+  justify-content: left;
+  margin: 40px;
+}
 
   
-  
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -2,11 +2,10 @@ import { useState, useEffect } from "react"
 import { Redirect, Link } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
+import Cal from './calendar/Cal'
 import CalendarView from './calendar/CalendarView'
 import Weather from './Weather'
-import styled from "styled-components";
-
-
+import styled from 'styled-components'
 
 export default function Profile(props) {
     //state is information from the server
@@ -58,22 +57,22 @@ export default function Profile(props) {
     return(
         <div>
             <Weather />
-            <h4>Welcome {props.currentUser.name}👋</h4>
-            <Link to="/calendar">Calendar</Link>
-            <h5>your email is {props.currentUser.email}</h5>
 
-            
-                
+            <h2>Welcome, {props.currentUser.name}👋</h2>
+            {/* <Link to="/calendar">Calendar</Link> */}
+            {/* <h5>your email is {props.currentUser.email}</h5>
+
             <Events>
                 <Link to="/calendar">Calendar</Link>
-              <h2>Today's Schedule:</h2>
-              <h5><span>10:00am </span>- Brunch with Bill</h5>
+              <h3>Today's Schedule:</h3>
+              <h5><span>10:00am </span> - Brunch with Bill</h5>
               <h5><span>12:00pm</span> - Lunch with Jill</h5>
               <h5><span>2:00pm</span> - Meeting with Brian</h5>
               <h5><span>5:00pm</span> - Pickup Jenny</h5>
             </Events>
-                
-                
-        </div>     
+        </div>
     )
 }
+        
+                  
+ 

@@ -35,8 +35,9 @@ export default function Weather() {
         }
      
       return (
-      
-            <Box display='inline-flex' >
+      <div className="boxContainer">
+            <Box display='inline-flex'>
+                
                 <Box style={{backgroundColor: 'lightblue', paddingLeft: '20%', paddingRight: '20%', borderRadius: '12px'}}>
                    
                     <Box item>
@@ -54,6 +55,7 @@ export default function Weather() {
                 
                 </Box>
             </Box>
+            </div>
         
       );
 }
