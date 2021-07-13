@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 
 export default function Weather() {
-
-    // const useStyles = makeStyles() => ({
-    //     h3
-    // })
-
+    
     const [weather, setWeather] = useState()
     const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=seattle&units=imperial&appid=${process.env.REACT_APP_WEATHER_API}`
     
