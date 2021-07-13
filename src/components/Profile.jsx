@@ -5,13 +5,26 @@ import Login from './Login'
 import Cal from './calendar/Cal'
 import CalendarView from './calendar/CalendarView'
 import Weather from './Weather'
-
-
+import styled from 'styled-components'
 
 export default function Profile(props) {
     //state is information from the server
     const [message, setMessage] = useState('')
   
+    const Events = styled.div`
+    width: 190px;
+    margin: 10px 0px;
+    .h2 {
+      margin: 5px 0px;
+      padding: 10px 0px;
+    }
+    .h5 {
+      padding: 5px 0px;
+    }
+    &:hover {
+        text-decoration: underline;
+      }
+`
 
     //hit the auth locked route on the backend
     useEffect(() => {
@@ -44,8 +57,8 @@ export default function Profile(props) {
     return(
         <div>
             <Weather />
-            <h4>Greetings! {props.currentUser.name}👋</h4>
-            <Link to="/calendar">Calendar</Link>
+            <h2>Welcome, {props.currentUser.name}👋</h2>
+            {/* <Link to="/calendar">Calendar</Link> */}
             {/* <h5>your email is {props.currentUser.email}</h5>
 
             <div>
@@ -54,6 +67,17 @@ export default function Profile(props) {
                 <p>{message}</p> 
                 
              </div> */}
+            <Events>
+                <Link to="/calendar">Calendar</Link>
+              <h3>Today's Schedule:</h3>
+              <h5><span>10:00am </span> - Brunch with Bill</h5>
+              <h5><span>12:00pm</span> - Lunch with Jill</h5>
+              <h5><span>2:00pm</span> - Meeting with Brian</h5>
+              <h5><span>5:00pm</span> - Pickup Jenny</h5>
+            </Events>
         </div>
     )
 }
+        
+                  
+ 
