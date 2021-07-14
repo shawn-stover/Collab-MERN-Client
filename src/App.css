@@ -10,14 +10,49 @@
 
 .boxContainer {
   display: flex;
-  justify-content: left;
-  margin: 40px;
+  /* justify-content: left; */
+  margin-left: 40px;
+  padding-top: 10px;
+  height: 170px;
+  
 }
 
 .itineraryContainer {
-  display: block;
-  margin-left: 850px;
+  /* display: block;
+  margin-left: 850px; */
+  display: flex; 
+  /* flex-direction: column;  */
+  justify-content: center; 
+  align-items: center;
 }  
+
+/* .welcome {
+  display: flex;
+  justify-content: center; 
+} */
+
+.navContainer {
+  background-color: lavenderblush;
+}
+
+.welcomeContainer {
+  border: 2px solid lightgrey;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  width: 400px;
+  height: 600px;
+  justify-content: center;
+  
+}
+
+.wwContainer {
+  width: 700px;
+  height: 650px;
+  display: flex;
+  justify-content: space-around; 
+  margin: 0 auto;
+
+}
 
 .App-logo {
   height: 40vmin;

@@ -56,22 +56,31 @@ export default function Profile(props) {
     if(!props.currentUser) return <Redirect to='/login' component={Login} currentUser= {props.currentUser}/>
     return(
         <div>
-            <Weather />
+            <div className='wwContainer'>
+                <Weather />
+                <div className="welcomeContainer">
 
-            <h2>Welcome, {props.currentUser.name}👋</h2>
-             {/* <Link to="/calendar">Calendar</Link> 
-             <h5>your email is {props.currentUser.email}</h5> */}
+                    <div className="welcome">
+                        <h1>Welcome, {props.currentUser.name}👋</h1>
+                    </div>
 
-                <div className='itineraryContainer'>
-            <Events>
-                <Link to="/calendar">Calendar</Link>
-              <h3>Today's Schedule:</h3>
-              <h5><span>10:00am </span> - Brunch with Bill</h5>
-              <h5><span>12:00pm</span> - Lunch with Jill</h5>
-              <h5><span>2:00pm</span> - Meeting with Brian</h5>
-              <h5><span>5:00pm</span> - Pickup Jenny</h5>
-            </Events>
-              </div>
+                        <div className='itineraryContainer'>
+
+                        {/* <Link to="/calendar">Calendar</Link> 
+                        <h5>your email is {props.currentUser.email}</h5> */}
+                            <div>
+                                <Events>
+                                        <h2>Today's Schedule:</h2>
+                                        <h3><span>10:00am </span> - Brunch with Bill</h3>
+                                        <h3><span>12:00pm</span> - Lunch with Jill</h3>
+                                        <h3><span>2:00pm</span> - Meeting with Brian</h3>
+                                        <h3><span>5:00pm</span> - Pickup Jenny</h3>
+                                    <Link to="/calendar">Calendar</Link>
+                                </Events>
+                            </div>
+                        </div>
+                </div>
+            </div>
         </div>
     )
 }

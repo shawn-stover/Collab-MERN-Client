@@ -22,6 +22,7 @@ export default function Navbar(props) {
              <Link to="/login">
                 Login!
             </Link>
+            
             <Link to="/register">
                 New Account
             </Link>
@@ -30,18 +31,20 @@ export default function Navbar(props) {
     )
 
     return(
-        <Nav>
-            <Link to="/">
-            <AiOutlineHome className="home" fontSize="large"/>
-            </Link>
+        <div className="navContainer">
+            <Nav>
+                <Link to="/">
+                <AiOutlineHome className="home" fontSize="large"/>
+                </Link>
+                
             
-           
-            {props.currentUser ? loggedIn : loggedOut}
-           
-           <Search>
-               <input type="text" className="search"></input><input type="button" className="button" value="🔎"></input>
-           </Search>
-        </Nav>
+                {props.currentUser ? loggedIn : loggedOut}
+            
+            {/* <Search>
+                <input type="text" className="search"></input><input type="button" className="button" value="🔎"></input>
+            </Search> */}
+            </Nav>
+        </div>
     )
 }
 const Search = styled.form`
