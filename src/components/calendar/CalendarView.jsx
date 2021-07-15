@@ -103,7 +103,7 @@ export default function CalendarView() {
 }  
 const Wrapper = styled.div`
   min-height: 100vh;
-  background-color: white;
+  background-color: lavenderblush;
   max-width: 1000px;
   margin: auto;
 `;
@@ -120,12 +120,14 @@ const Tabs = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   margin-top: 2px;
+  background-color: lightgrey;
 `;
+
 const TabItem = styled.div`
 
   flex-grow: 1;
   text-align: center;
-  background-color: white;
+  background-color: lightgrey;
   color: black;
   margin-bottom: 20px;
   padding: 20px 0;

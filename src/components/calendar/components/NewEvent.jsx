@@ -38,15 +38,14 @@ const Wrapper = styled.div`
 
 `
 
-const NewEventIcon = styled.button`
-font-size: 3rem;
-  
+const NewEventIcon = styled.button` 
+  font-size: 3rem;
   line-height: 1rem;
-  width: 50px;
-  height: 50px;
+  width: 67px;
+  height: 67px;
   border-radius: 50px;
   border: none;
-  color: white;
+  // color: white;
   background-color: white;
   position: fixed;
   top: 10px;
