@@ -91,11 +91,8 @@ export default function Login(props) {
         <CssBaseline />
         <div className={classes.paper}>
             <Title />
-          {/* <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar> */}
           <Typography component="h1" variant="h5">
-            Sign up
+            Sign in
           </Typography>
           <form className={classes.form} noValidate onSubmit={handleSubmit} >
             <Grid container spacing={2}>
@@ -167,12 +164,12 @@ export default function Login(props) {
               color="primary"
               className={classes.submit}
             >
-              Sign Up
+              Sign In
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
+                <Link href="/Register" variant="body2">
+                  Don't have an account? Sign up!
                 </Link>
               </Grid>
             </Grid>
