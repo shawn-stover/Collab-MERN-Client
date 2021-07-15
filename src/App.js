@@ -5,8 +5,6 @@ import Profile from './components/Profile'
 import Register from './components/Register'
 import Welcome from './components/Welcome'
 
-// import SignUp_In from './components/SignUp_In'
-
 import {
   BrowserRouter as Router,
   Switch,

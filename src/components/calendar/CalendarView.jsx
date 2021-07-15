@@ -104,10 +104,12 @@ const Wrapper = styled.div`
   background-color: lavenderblush;
   max-width: 1000px;
   margin: auto;
+  margin-top: 60px;
 `;
 
 const TabsWrapper = styled.div`
   display: grid;
+  justify-content: center;
   grid-template-columns: auto 700px;
   grid-template-areas: "- tabs";
 `
