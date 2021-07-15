@@ -34,7 +34,7 @@ export default function Cal({updateCurrentMonth}) {
               <h5 className="event"><span>2:00pm</span> - Meeting with Brian</h5>
               <h5 className="event"><span>5:00pm</span> - Pickup Jenny</h5>
             </Events>
-            <People>
+            {/* <People>
               <label for='checkboxBill'>
                 Bill
               </label>
@@ -55,7 +55,7 @@ export default function Cal({updateCurrentMonth}) {
               </label>
               <input type='checkbox' name='checkboxJenny' />
               <br></br>
-            </People>
+            </People> */}
             <Calendar
                  tileContent={tileContent}
                  onChange={onChange}
@@ -96,7 +96,7 @@ const Events = styled.div`
 `
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   .react-calendar {
     width: 700px;
     height: 500px;
