@@ -66,7 +66,7 @@ const Search = styled.form`
     justify-content: center;
     padding-right: 50px;
     .search {
-        color: white;
+        color: black;
         width: 400px;
         height: 30px;
         border: none;

@@ -28,6 +28,7 @@ export default function Welcome() {
                 <br></br>
                 <ShareIcon />
                 <h3>Link Multiple accounts</h3>
+                <TodayIcon />
             </Sidebar>
             <Info>
                 <br></br>

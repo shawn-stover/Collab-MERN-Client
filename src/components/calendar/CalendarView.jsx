@@ -25,7 +25,7 @@ export default function CalendarView() {
             setMonthEvents(res.data);
             setStatus("idle")
          })
-          .catch((error) => console.log("error!", error));
+          .catch((error) => console.log("💥error!", error));
       }, [currentMonth]);
     
       
@@ -36,11 +36,10 @@ export default function CalendarView() {
         await fetch(`/events/month/${currentMonth}`)
           .then((res) => res.json())
           .then((res) => {
-            console.log(res.data)
             setMonthEvents(res.data);
             setStatus("idle");
           })
-          .catch((error) => console.log("error!", error));
+          .catch((error) => console.log("💣error!", error));
       };
     return(
       <Wrapper>
@@ -69,18 +68,11 @@ export default function CalendarView() {
 
       {status === "loading" ? null : (
         <>
-          {MonthEvents.length === 0 ? (
-            <NoEventsSection>
-              <p>You have nothing planned!</p>
-              <p>Tap " + " to add a task.</p>
-              
-            </NoEventsSection>
-          ) : null}
           <EventsSection>
             {MonthEvents.map((ev) => (
               <EventBox
                 onClick={() =>
-                  history.push(`/date/${format(new Date(ev.date), "y-MM-dd")}`)
+                  console.log(`/date/${format(new Date(ev.date), "y-MM-dd")}`)
                 }
               >
                 <DateBox>
@@ -137,14 +129,14 @@ const TabItem = styled.div`
   padding: 20px 0;
   font-size: 1.2rem;
 `;
-const NoEventsSection = styled.div`
-  margin-top: 20px;
-  text-align: center;
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+// const NoEventsSection = styled.div`
+//   margin-top: 20px;
+//   text-align: center;
+//   font-size: 1.2rem;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// `;
 
 const EventsSection = styled.div``;
 const slideUpAnimation = keyframes`
