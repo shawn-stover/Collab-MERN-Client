@@ -12,7 +12,8 @@ import { Calendar } from '@styled-icons/boxicons-regular/Calendar'
 
 const Events = styled.div`
 width: 190px;
-margin: 10px 0px;
+margin: 0 auto;
+margin-top: 10px;
 .h2 {
   margin: 5px 0px;
   padding: 10px 0px;
