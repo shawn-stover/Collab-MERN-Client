@@ -39,7 +39,6 @@ const Wrapper = styled.div`
 `
 
 const NewEventIcon = styled.button`
-  
 font-size: 3rem;
   
   line-height: 1rem;

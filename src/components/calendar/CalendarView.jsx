@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 import axios from 'axios'
 import Cal from './Cal'
-import NewEvent from "./NewEvent"
+import NewEvent from "./components/NewEvent"
 import Itinerary from "./Itinerary";
 import { useHistory } from "react-router-dom";
 import { format } from "date-fns";
