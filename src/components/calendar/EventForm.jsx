@@ -6,19 +6,15 @@ import NewEventTime from "./NewEventTime";
 import { FiCalendar } from "react-icons/fi";
 import { BsArrowRight } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
-import { RiNotification2Line } from "react-icons/ri";
 import { GrClose } from "react-icons/gr";
 import { FcCheckmark } from "react-icons/fc";
+import axios from "axios";
 
 const INITIAL_EVENT = {
     kind: "calendar-event",
     title: "",
     description: "",
     location: "",
-    creator: {
-      name: "example",
-      userId: "01",
-    },
     start: {
       date: null,
       time: { hours: null, minutes: null, ap: null, allday: false },
@@ -61,12 +57,20 @@ export default function EventForm({ closeDialog, refreshEvents }) {
       const handleDescription = (value) => setForm({ ...form, description: value });
       const handleLocation = (value) => setForm({ ...form, location: value });
     
-      const CreateEvent = (event) => {
-        event.preventDefault();
+      const CreateEvent = async (event) => {
+        try {
+          event.preventDefault();
+          console.log(JSON.stringify(form, null, 2))
+          const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}`, INITIAL_EVENT)
+          console.log(response)
+          //Axios 👹 post 👾 here 
+          //Schema mama
         setStatus("loading");
-
+        } catch(error) {
+            console.log("error!💀", error)
+        }
       }
-
+//    ^^^ CONSOLE.LOG - WHAT GOES TO JSONs 
       //INPUT FIELDS FOR START & END
       const [displayStartDate, setDisplayStartDate] = useState("");
       const [displayEndDate, setDisplayEndDate] = useState("");
@@ -119,7 +123,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
       setDisplayStartDate(formatted);
     }
   };
-  console.log(JSON.stringify(form, null, 2))
+  
     return(
         <div>
         <form>
@@ -196,11 +200,6 @@ export default function EventForm({ closeDialog, refreshEvents }) {
               />
             </div>
           </Section>
-          <Section>
-            <Label>Notifications</Label>
-            <RiNotification2Line />{" "}
-            <SectionInput2 type="text" placeholder="Add notification" />
-          </Section>
         </form>
         <ActionsSection>
           <ButtonClose onClick={closeDialog}>
@@ -210,6 +209,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
             onClick={(ev) => CreateEvent(ev)}
             disabled={buttonDisabled}
           >
+            {/* ^^ console.log== CreateEvent(ev) */}
             {status === "idle" ? (
               "Create event"
             ) : status === "loading" ? (
