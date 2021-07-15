@@ -26,14 +26,14 @@ export default function Cal({updateCurrentMonth}) {
     return(
         
             <Wrapper>
-            <Events>
-              <h3>Upcoming Events</h3>
+            {/* <Events>
+              <h4>Upcoming Events</h4>
               <br></br>
-              <h5 className="event"><span>10:00am </span>- Brunch with Bill</h5>
-              <h5 className="event"><span>12:00pm</span> - Lunch with Jill</h5>
-              <h5 className="event"><span>2:00pm</span> - Meeting with Brian</h5>
-              <h5 className="event"><span>5:00pm</span> - Pickup Jenny</h5>
-            </Events>
+              <p className="event"><span>10:00am </span>- Brunch with Bill</p><hr />
+              <p className="event"><span>12:00pm</span> - Lunch with Jill</p><hr />
+              <p className="event"><span>2:00pm</span> - Meeting with Brian</p><hr />
+              <p className="event"><span>5:00pm</span> - Pickup Jenny</p><hr />
+            </Events> */}
             {/* <People>
               <label for='checkboxBill'>
                 Bill
@@ -86,7 +86,8 @@ const People = styled.div`
 const Events = styled.div`
     width: 190px;
     margin: 10px 0px;
-    .h3 {
+    .p {
+      font-size: 10px;
       margin: 5px 0px;
       padding: 10px 0px;
     }
@@ -96,7 +97,7 @@ const Events = styled.div`
 `
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   .react-calendar {
     width: 700px;
     height: 500px;

@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import axios from 'axios'
 import Cal from './Cal'
 import NewEvent from "./NewEvent"
+import Itinerary from "./Itinerary";
 import { useHistory } from "react-router-dom";
 import { format } from "date-fns";
 
@@ -64,6 +65,7 @@ export default function CalendarView() {
           </Tabs>
         </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
+      <Itinerary />
 
       {status === "loading" ? null : (
         <>
@@ -108,6 +110,8 @@ export default function CalendarView() {
 const Wrapper = styled.div`
   min-height: 100vh;
   background-color: white;
+  max-width: 1000px;
+  margin: auto;
 `;
 
 const TabsWrapper = styled.div`
