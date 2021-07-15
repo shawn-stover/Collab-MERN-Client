@@ -9,16 +9,13 @@ import { GrLocation } from "react-icons/gr";
 import { RiNotification2Line } from "react-icons/ri";
 import { GrClose } from "react-icons/gr";
 import { FcCheckmark } from "react-icons/fc";
+import axios from "axios";
 
 const INITIAL_EVENT = {
     kind: "calendar-event",
     title: "",
     description: "",
     location: "",
-    creator: {
-      name: "example",
-      userId: "01",
-    },
     start: {
       date: null,
       time: { hours: null, minutes: null, ap: null, allday: false },
@@ -60,12 +57,17 @@ export default function EventForm({ closeDialog, refreshEvents }) {
       const handleDescription = (value) => setForm({ ...form, description: value });
       const handleLocation = (value) => setForm({ ...form, location: value });
     
-      const CreateEvent = (event) => {
-        event.preventDefault();
+      const CreateEvent = async (event) => {
+        try {
+          event.preventDefault();
+          await axios.post(`${process.env.REACT_APP_SERVER_URL}`)
+        
         setStatus("loading");
-
+        } catch(error) {
+            console.log("error!💀", error)
+        }
       }
-
+//    ^^^ CONSOLE.LOG - WHAT GOES TO JSONs 
       //INPUT FIELDS FOR START & END
       const [displayStartDate, setDisplayStartDate] = useState("");
       const [displayEndDate, setDisplayEndDate] = useState("");
@@ -208,6 +210,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
             onClick={(ev) => CreateEvent(ev)}
             disabled={buttonDisabled}
           >
+            {/* ^^ console.log== CreateEvent(ev) */}
             {status === "idle" ? (
               "Create event"
             ) : status === "loading" ? (
