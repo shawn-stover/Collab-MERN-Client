@@ -168,7 +168,7 @@ export default function Login(props) {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/Register" variant="body2">
                   Don't have an account? Sign up!
                 </Link>
               </Grid>

@@ -6,25 +6,32 @@ import Cal from './calendar/Cal'
 import CalendarView from './calendar/CalendarView'
 import Weather from './Weather'
 import styled from 'styled-components'
+import { RightArrow } from '@styled-icons/boxicons-regular/RightArrow'
+
+const Events = styled.div`
+width: 190px;
+margin: 10px 0px;
+.h2 {
+  margin: 5px 0px;
+  padding: 10px 0px;
+}
+.h5 {
+  padding: 5px 0px;
+}
+&:hover {
+    text-decoration: underline;
+  }
+`
+const Arrows = styled.span`
+font-size: 10px;
+height: 15px;
+width: 15px;
+`
 
 export default function Profile(props) {
     //state is information from the server
     const [message, setMessage] = useState('')
   
-    const Events = styled.div`
-    width: 190px;
-    margin: 10px 0px;
-    .h2 {
-      margin: 5px 0px;
-      padding: 10px 0px;
-    }
-    .h5 {
-      padding: 5px 0px;
-    }
-    &:hover {
-        text-decoration: underline;
-      }
-`
 
     //hit the auth locked route on the backend
     useEffect(() => {
@@ -70,11 +77,14 @@ export default function Profile(props) {
                         <h5>your email is {props.currentUser.email}</h5> */}
                             <div>
                                 <Events>
+                                    <Arrows>
                                         <h2>Today's Schedule:</h2>
-                                        <h3><span>10:00am </span> - Brunch with Bill</h3>
-                                        <h3><span>12:00pm</span> - Lunch with Jill</h3>
-                                        <h3><span>2:00pm</span> - Meeting with Brian</h3>
-                                        <h3><span>5:00pm</span> - Pickup Jenny</h3>
+                                        <h3><RightArrow /><span>10:00am </span> - Brunch with Bill</h3>
+                                        <h3><RightArrow /><span>12:00pm</span> - Lunch with Jill</h3>
+                                        <h3><RightArrow /><span>2:00pm</span> - Meeting with Brian</h3>
+                                        <h3><RightArrow /><span>5:00pm</span> - Pick up Jenny</h3>
+                                        
+                                    </Arrows>
                                     <Link to="/calendar">Calendar</Link>
                                 </Events>
                             </div>
