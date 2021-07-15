@@ -8,8 +8,8 @@ export default function Itinerary() {
     useEffect(() => {
         const getDailyEvents = async () => {
             try{
-                const response = await axios.get(`${process.env.REACT_APP_SERVER}/api-v1/calendar/event`)
-                setEventData(response)
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/event`)
+                setEventData(response.data)
             }catch(error) {
                 console.log(error)
             }
@@ -21,7 +21,6 @@ export default function Itinerary() {
     const eventList = eventData.map((activity) => {
         return (
             <ListItem>
-                {activity.startTime}
                 {activity.title}
             </ListItem>
         )
@@ -29,11 +28,15 @@ export default function Itinerary() {
     return(
         <Wrapper>
             <h4>What's up Today?</h4>
-            this is the itinerary. Hopefully you can get this fucker working tonight
+           <List>
+               {eventList}
+           </List>
         </Wrapper>
     )
 }
 
+const List = styled.div`
+`
 const ListItem = styled.div`
 `
 const Wrapper = styled.div`

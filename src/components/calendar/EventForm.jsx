@@ -26,7 +26,8 @@ const INITIAL_EVENT = {
     end: {
       date: null,
       time: { hours: null, minutes: null, ap: null, allday: false },
-    }}
+    }
+  }
 
 
 export default function EventForm({ closeDialog, refreshEvents }) {
@@ -118,6 +119,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
       setDisplayStartDate(formatted);
     }
   };
+  console.log(JSON.stringify(form, null, 2))
     return(
         <div>
         <form>
