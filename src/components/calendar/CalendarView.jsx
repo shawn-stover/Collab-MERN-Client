@@ -44,7 +44,7 @@ export default function CalendarView() {
     return(
       <Wrapper>
         <NewEvent refreshEvents={getEventsAfterCreate} />
-        <TabsWrapper>
+        {/* <TabsWrapper> */}
           <Tabs>
             <TabItem onClick={() => history.push("/calendar-month")}>
               Monthly
@@ -62,7 +62,7 @@ export default function CalendarView() {
               Daily
             </TabItem>
           </Tabs>
-        </TabsWrapper>
+        {/* </TabsWrapper> */}
       <Cal updateCurrentMonth={updateCurrentMonth} />
       <Itinerary />
 
@@ -106,11 +106,11 @@ const Wrapper = styled.div`
   margin: auto;
 `;
 
-const TabsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: auto 700px;
-  grid-template-areas: "- tabs";
-`
+// const TabsWrapper = styled.div`
+//   display: grid;
+//   grid-template-columns: auto 700px auto;
+//   grid-template-areas: " - tabs -";
+// `
 
 const Tabs = styled.div`
   grid-area: tabs;
