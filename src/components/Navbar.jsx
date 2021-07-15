@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 import styled from "styled-components";
 import { AiOutlineHome } from "react-icons/ai";
+import { UserCircle } from "@styled-icons/boxicons-regular/UserCircle"
+import { LogOutCircle } from "@styled-icons/boxicons-regular/LogOutCircle"
+import { LoginCircle } from "@styled-icons/remix-line/LoginCircle"
 
 export default function Navbar(props) {
     // console.log(`props of navbar:`, props)
@@ -8,40 +11,54 @@ export default function Navbar(props) {
     //if the user is logged in
     const loggedIn = (
         <>
+        
             <Link to="/profile">
-                Profile
+                <User>
+                <UserCircle />
+                </User>
             </Link>
+           
+
+
             <Link to="/" >
-                <span onClick={props.handleLogout}>Logout!</span>
+                <SignOut>
+                <span onClick={props.handleLogout}><LogOutCircle color="#3f51b5" size="md"/></span>
+                </SignOut>
             </Link>
         </>
     )
-
+    
     const loggedOut = (
         <>
              <Link to="/login">
-                Login!
+                 <SignIn>
+                    <LoginCircle />
+                </SignIn>
             </Link>
-            <Link to="/register">
+       
+            
+            {/* <Link to="/register">
                 New Account
-            </Link>
+            </Link> */}
 
         </>
+       
     )
 
     return(
-        <Nav>
-            <Link to="/">
-            <AiOutlineHome className="home" fontSize="large"/>
-            </Link>
+        <div className="navContainer">
+            <Nav> 
+                <Link to="/Profile">
+                <AiOutlineHome className="home" fontSize="large"/>
+                </Link>
             
-           
-            {props.currentUser ? loggedIn : loggedOut}
-           
-           <Search>
-               <input type="text" className="search"></input><input type="button" className="button" value="🔎"></input>
-           </Search>
-        </Nav>
+                {props.currentUser ? loggedIn : loggedOut}
+            
+            {/* <Search>
+                <input type="text" className="search"></input><input type="button" className="button" value="🔎"></input>
+            </Search> */}
+            </Nav>
+        </div>
     )
 }
 const Search = styled.form`
@@ -69,6 +86,26 @@ const Nav = styled.nav`
     .home {
         width: 50px;
         height: 30px;
-        color: black;
+        color: #3f51b5;
     }
 `
+const User = styled.nav`
+    font-size: 10px;
+    width: 30px;
+    height: 30px;
+    color: #3f51b5;
+    padding-right: 7px;
+    `
+const SignOut = styled.nav`
+    font-size: 10px;
+    width: 30px;
+    height: 30px;
+    color: #3f51b5;
+    `
+
+const SignIn = styled.nav`
+    font-size: 10px;
+    width: 30px;
+    height: 30px;
+    color: #3f51b5;
+    `

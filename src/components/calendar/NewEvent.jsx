@@ -20,7 +20,7 @@ const [open, setOpen] = React.useState(false);
   };
 
     return(
-        <div>
+        <Wrapper>
              <NewEventIcon style= {{padding: "10px"}}onClick={handleClickOpen}>➕</NewEventIcon>
         <Dialog
         fullScreen
@@ -30,12 +30,18 @@ const [open, setOpen] = React.useState(false);
       >
           <EventForm closeDialog={handleClose} refreshEvents={refreshEvents} />
           </Dialog>
-        </div>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.div`
+
+`
+
 const NewEventIcon = styled.button`
-  font-size: 3rem;
-  font-weight: 200;
+  
+font-size: 3rem;
+  
   line-height: 1rem;
   width: 50px;
   height: 50px;

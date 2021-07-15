@@ -38,7 +38,7 @@ export default function Weather() {
       <div className="boxContainer">
             <Box display='inline-flex'>
                 
-                <Box style={{backgroundColor: 'lightblue', paddingLeft: '20%', paddingRight: '20%', borderRadius: '12px'}}>
+                <Box style={{backgroundColor: 'cornsilk', paddingLeft: '20%', paddingRight: '20%', border: '1px solid lightgrey', borderRadius: '12px'}}>
                    
                     <Box item>
                         <img style={{height: '50px'}} src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt='Weather Icon'/>
