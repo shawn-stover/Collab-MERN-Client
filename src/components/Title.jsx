@@ -18,7 +18,7 @@ const fade = keyframes`
     }
 `
 
-const titleHolder = styled.title`
+const TitleHolder = styled.title`
     
     text-align: center;
    
@@ -38,10 +38,10 @@ const SubHeader = styled(Header)`
 export default function Title () {
     return(
         <div>
-            <titleHolder>
+            <TitleHolder>
                 <Header>FALENDAR</Header>
                 <SubHeader>Schedule Better</SubHeader>
-            </titleHolder>    
+            </TitleHolder>    
         </div>    
     )
 

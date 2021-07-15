@@ -20,7 +20,9 @@ export default function CalendarView() {
     useEffect(() => {
         setStatus("loading");
         fetch(`/events/month/${currentMonth}`)
-          .then((res) => res.json())
+        //AXIOS .GET ROUTE
+          
+        .then((res) => res.json())
           .then((res) => {
             setMonthEvents(res.data);
             setStatus("idle")
