@@ -60,8 +60,10 @@ export default function EventForm({ closeDialog, refreshEvents }) {
       const CreateEvent = async (event) => {
         try {
           event.preventDefault();
-          await axios.post(`${process.env.REACT_APP_SERVER_URL}`)
-        
+          const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}`, INITIAL_EVENT)
+          console.log(response)
+          //Axios 👹 post 👾 here 
+          //Schema mama
         setStatus("loading");
         } catch(error) {
             console.log("error!💀", error)
