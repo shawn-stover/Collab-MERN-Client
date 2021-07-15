@@ -10,12 +10,15 @@
 
 .boxContainer {
   display: flex;
-  /* justify-content: left; */
-  margin-left: 40px;
   padding-top: 10px;
   height: 170px;
   
 }
+
+body {
+  background-color: lavenderblush;
+}
+
 
 .itineraryContainer {
   /* display: block;
@@ -30,19 +33,27 @@
   display: flex;
   justify-content: center; 
 } */
+nav {
+  display: flex;
+}
 
 .navContainer {
   background-color: lavenderblush;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .welcomeContainer {
   border: 2px solid lightgrey;
   border-radius: 20px;
+  margin-top: 50px;
+  padding-top: 10px;
   padding-bottom: 10px;
-  width: 400px;
-  height: 600px;
+  width: 500px;
+  height: 800px;
   justify-content: center;
-  
 }
 
 .wwContainer {
@@ -51,7 +62,10 @@
   display: flex;
   justify-content: space-around; 
   margin: 0 auto;
+}
 
+h3 {
+  font-size: 14px;
 }
 
 .App-logo {

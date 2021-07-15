@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import styled from "styled-components";
 import { AiOutlineHome } from "react-icons/ai";
 import { UserCircle } from "@styled-icons/boxicons-regular/UserCircle"
-import { LogoutCircle } from "@styled-icons/remix-line/LogoutCircle"
+import { LogOutCircle } from "@styled-icons/boxicons-regular/LogOutCircle"
 import { LoginCircle } from "@styled-icons/remix-line/LoginCircle"
 
 export default function Navbar(props) {
@@ -11,20 +11,23 @@ export default function Navbar(props) {
     //if the user is logged in
     const loggedIn = (
         <>
+        
             <Link to="/profile">
                 <User>
                 <UserCircle />
                 </User>
             </Link>
+           
+
 
             <Link to="/" >
                 <SignOut>
-                <span onClick={props.handleLogout}><LogoutCircle /></span>
+                <span onClick={props.handleLogout}><LogOutCircle color="#3f51b5" size="md"/></span>
                 </SignOut>
             </Link>
         </>
     )
-
+    
     const loggedOut = (
         <>
              <Link to="/login">
@@ -32,12 +35,14 @@ export default function Navbar(props) {
                     <LoginCircle />
                 </SignIn>
             </Link>
+       
             
             {/* <Link to="/register">
                 New Account
             </Link> */}
 
         </>
+       
     )
 
     return(
@@ -81,25 +86,26 @@ const Nav = styled.nav`
     .home {
         width: 50px;
         height: 30px;
-        color: ceruleanblue;
+        color: #3f51b5;
     }
 `
 const User = styled.nav`
     font-size: 10px;
     width: 30px;
     height: 30px;
-    color: ceruleanblue;
+    color: #3f51b5;
+    padding-right: 7px;
     `
 const SignOut = styled.nav`
     font-size: 10px;
     width: 30px;
     height: 30px;
-    color: ceruleanblue;
+    color: #3f51b5;
     `
 
 const SignIn = styled.nav`
     font-size: 10px;
     width: 30px;
     height: 30px;
-    color: ceruleanblue;
+    color: #3f51b5;
     `

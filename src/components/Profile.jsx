@@ -7,6 +7,8 @@ import CalendarView from './calendar/CalendarView'
 import Weather from './Weather'
 import styled from 'styled-components'
 import { RightArrow } from '@styled-icons/boxicons-regular/RightArrow'
+import { Calendar } from '@styled-icons/boxicons-regular/Calendar'
+
 
 const Events = styled.div`
 width: 190px;
@@ -28,11 +30,20 @@ height: 15px;
 width: 15px;
 `
 
+const SeeCalendar = styled.div`
+font-size: 10px;
+height: 100px;
+width: 100px;
+color: #3f51b5
+display: flex;
+margin: 0 auto;
+`
+
 export default function Profile(props) {
     //state is information from the server
     const [message, setMessage] = useState('')
-  
-
+    
+    
     //hit the auth locked route on the backend
     useEffect(() => {
         const getPrivateMessage = async () => {
@@ -46,7 +57,7 @@ export default function Profile(props) {
                 //hit the auth locked endpoint
                 const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`, {headers: authHeaders})
                 console.log(response.data)
-
+                
                 //set state wwith data from the server
                 setMessage(response.data.msg)
             }catch(error) {
@@ -58,7 +69,7 @@ export default function Profile(props) {
         }
         getPrivateMessage()
     },[props])
-
+    
     //redirect if there is no user in state
     if(!props.currentUser) return <Redirect to='/login' component={Login} currentUser= {props.currentUser}/>
     return(
@@ -77,15 +88,26 @@ export default function Profile(props) {
                         <h5>your email is {props.currentUser.email}</h5> */}
                             <div>
                                 <Events>
-                                    <Arrows>
                                         <h2>Today's Schedule:</h2>
-                                        <h3><RightArrow /><span>10:00am </span> - Brunch with Bill</h3>
-                                        <h3><RightArrow /><span>12:00pm</span> - Lunch with Jill</h3>
-                                        <h3><RightArrow /><span>2:00pm</span> - Meeting with Brian</h3>
-                                        <h3><RightArrow /><span>5:00pm</span> - Pick up Jenny</h3>
-                                        
-                                    </Arrows>
-                                    <Link to="/calendar">Calendar</Link>
+                                        <br></br>
+                                        <Arrows>
+                                        <h3><RightArrow size="10"/><span>1:00pm</span> - Wallow in self pity</h3>
+                                        <br></br> 
+                                        <h3><RightArrow size="10"/><span>4:30pm</span> - Stare into the abyss</h3>
+                                        <br></br>
+                                        <h3><RightArrow size="10"/><span>5:00pm</span> - Solve world hunger, tell no one</h3>
+                                        <br></br>
+                                        <h3><RightArrow size="10"/><span>5:30pm</span> - Jazzercise</h3>
+                                        <br></br>
+                                        <h3><RightArrow size="10"/><span>6:30pm</span> - Dinner with me</h3>
+                                        <br></br>
+                                        <h3><RightArrow size="10"/><span>7:00pm</span> - Wrestle with my self loathing</h3>
+                                        <br></br>
+                                        <br></br>
+                                        <SeeCalendar>
+                                        <Link to="/calendar"><Calendar color="#3f51b5"/></Link>
+                                        </SeeCalendar>
+                                        </Arrows>
                                 </Events>
                             </div>
                         </div>
