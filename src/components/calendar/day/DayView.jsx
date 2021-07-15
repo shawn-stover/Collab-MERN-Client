@@ -4,9 +4,10 @@ import styled from "styled-components";
 import { GrLocation } from "react-icons/gr";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiArrowBack } from "react-icons/bi";
-import NewEvent from "../NewEvent"
+import NewEvent from "../components/NewEvent"
 import DateSection from "./DateSection";
 import NoEventToday from "./NoEventToday";
+import SingleEvent from "./SingleEvent"
 
 export default function DayView() {
     const [dayEvents, setDayEvents] = useState([]);
@@ -64,7 +65,20 @@ export default function DayView() {
         <TabItem>Day</TabItem>
       </Tabs>
       <DateSection today={today} />
-      <NoEventToday />
+      {status === "loading" ? null : (
+        <ContentSection>
+          {dayEvents.length === 0 ? (
+            <NoEventToday />
+          ) : (
+            <>
+              <SingleEvent
+                dayEvents={dayEvents}
+                refreshEvents={getDayEventsAfterDeleteAdd}
+              />
+            </>
+          )}
+        </ContentSection>
+      )}
         </Wrapper>
     )
 }
