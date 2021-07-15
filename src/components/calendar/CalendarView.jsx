@@ -42,24 +42,27 @@ export default function CalendarView() {
           .catch((error) => console.log("error!", error));
       };
     return(
-        <Wrapper>
-            <NewEvent refreshEvents={getEventsAfterCreate} />
-            <Tabs>
-        
-        <TabItem onClick={() => history.push("/calendar-month")}>Monthly</TabItem>
-        <TabItem
-          onClick={() => history.push(`/week/${format(new Date(), "y-MM-dd")}`)}
-          style={{ backgroundColor: "white" }}
-        >
-          Weekly
-        </TabItem>
-        <TabItem
-          style={{ backgroundColor: "white" }}
-          onClick={() => history.push(`/date/${format(new Date(), "y-MM-dd")}`)}
-        >
-          Daily
-        </TabItem>
-      </Tabs>
+      <Wrapper>
+        <NewEvent refreshEvents={getEventsAfterCreate} />
+        <TabsWrapper>
+          <Tabs>
+            <TabItem onClick={() => history.push("/calendar-month")}>
+              Monthly
+            </TabItem>
+            <TabItem
+              onClick={() => history.push(`/week/${format(new Date(), "y-MM-dd")}`)}
+              style={{ backgroundColor: "white" }}
+            >
+              Weekly
+            </TabItem>
+            <TabItem
+              style={{ backgroundColor: "white" }}
+              onClick={() => history.push(`/date/${format(new Date(), "y-MM-dd")}`)}
+            >
+              Daily
+            </TabItem>
+          </Tabs>
+        </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
 
       {status === "loading" ? null : (
@@ -99,7 +102,7 @@ export default function CalendarView() {
           </EventsSection>
         </>
       )}
-        </Wrapper>
+      </Wrapper>
     )
 }  
 const Wrapper = styled.div`
@@ -107,13 +110,21 @@ const Wrapper = styled.div`
   background-color: white;
 `;
 
+const TabsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto 700px;
+  grid-template-areas: "- tabs";
+`
+
 const Tabs = styled.div`
+  grid-area: tabs;
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   margin-top: 2px;
-  margin-right: 3px;
 `;
 const TabItem = styled.div`
+
   flex-grow: 1;
   text-align: center;
   background-color: white;

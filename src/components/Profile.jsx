@@ -42,8 +42,7 @@ margin: 0 auto;
 export default function Profile(props) {
     //state is information from the server
     const [message, setMessage] = useState('')
-    
-    
+
     //hit the auth locked route on the backend
     useEffect(() => {
         const getPrivateMessage = async () => {
@@ -82,7 +81,7 @@ export default function Profile(props) {
                         <h1>Welcome, {props.currentUser.name}👋</h1>
                     </div>
 
-                        <div className='itineraryContainer'>
+
 
                         {/* <Link to="/calendar">Calendar</Link> 
                         <h5>your email is {props.currentUser.email}</h5> */}
