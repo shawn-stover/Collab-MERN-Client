@@ -6,7 +6,6 @@ import NewEventTime from "./NewEventTime";
 import { FiCalendar } from "react-icons/fi";
 import { BsArrowRight } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
-import { RiNotification2Line } from "react-icons/ri";
 import { GrClose } from "react-icons/gr";
 import { FcCheckmark } from "react-icons/fc";
 import axios from "axios";
@@ -61,6 +60,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
       const CreateEvent = async (event) => {
         try {
           event.preventDefault();
+          console.log(JSON.stringify(form, null, 2))
           const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}`, INITIAL_EVENT)
           console.log(response)
           //Axios 👹 post 👾 here 
@@ -123,7 +123,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
       setDisplayStartDate(formatted);
     }
   };
-  console.log(JSON.stringify(form, null, 2))
+  
     return(
         <div>
         <form>
@@ -199,11 +199,6 @@ export default function EventForm({ closeDialog, refreshEvents }) {
                 onChange={(ev) => handleLocation(ev.target.value)}
               />
             </div>
-          </Section>
-          <Section>
-            <Label>Notifications</Label>
-            <RiNotification2Line />{" "}
-            <SectionInput2 type="text" placeholder="Add notification" />
           </Section>
         </form>
         <ActionsSection>

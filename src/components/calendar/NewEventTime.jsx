@@ -1,6 +1,6 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
-import { FormControl, Select } from '@material-ui/core'
+import styled from "styled-components";
 // import Select from '@material-ui/core/Select';
 
 const HOURS = [
@@ -88,10 +88,9 @@ export default function NewEventTime({ form, setForm }) {
       };
     
     return(
-        <div> 
-             <div>
-      <FormControl>
-        <h2 className="TimeLabel">Time</h2>{" "}
+<>
+      <TimeSection>
+        <Label className="TimeLabel">Time</Label>{" "}
         <div className="AllDaySection">
           <input
             type="checkbox"
@@ -100,8 +99,8 @@ export default function NewEventTime({ form, setForm }) {
           />
           <label>All-day</label>
         </div>
-      </FormControl>
-      <div>
+      </TimeSection>
+      <TimeRange>
         <Select onChange={(ev) => onStartHourChange(ev.target.value)}>
           <option hidden></option>
           {HOURS.map((hour) => (
@@ -120,9 +119,9 @@ export default function NewEventTime({ form, setForm }) {
           <option>AM</option>
           <option>PM</option>
         </Select>
-        
+        <Arrow>
           <BsArrowRight />
-       
+        </Arrow>
         <Select onChange={(ev) => onEndHourChange(ev.target.value)}>
           <option hidden></option>
           {HOURS.map((hour) => (
@@ -141,8 +140,41 @@ export default function NewEventTime({ form, setForm }) {
           <option>AM</option>
           <option>PM</option>
         </Select>
-      </div>
-    </div>
-        </div>
+      </TimeRange>
+    </>
     )
 }
+const Label = styled.label`
+  padding-bottom: 10px;
+  display: block;
+  font-size: 1.2rem;
+`;
+const TimeSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  .TimeLabel {
+    display: inline-block;
+  }
+  .AllDaySection {
+    font-size: 1.2rem;
+  }
+  .checkBoxBox {
+    margin: 0 5px;
+  }
+`;
+const TimeRange = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const Arrow = styled.div`
+  padding: 0 10px;
+`;
+
+const Select = styled.select`
+  appearance: none;
+  padding: 1px 6px;
+  margin: 0 2px;
+  font-size: 1.1rem;
+  border: none;
+  background-color: #f2f2f2;
+`;
