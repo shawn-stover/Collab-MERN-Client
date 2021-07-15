@@ -12,7 +12,6 @@
   display: flex;
   padding-top: 10px;
   height: 170px;
-  
 }
 
 body {
@@ -30,9 +29,10 @@ body {
 }  
 
 /* .welcome {
-  display: flex;
-  justify-content: center; 
+  border-bottom: 2px solid lightgrey;
+  background-color: lightgrey;
 } */
+
 nav {
   display: flex;
 }
@@ -46,7 +46,7 @@ nav {
 }
 
 .welcomeContainer {
-  border: 2px solid lightgrey;
+  border: 3px solid lightgrey;
   border-radius: 20px;
   margin-top: 50px;
   padding-top: 10px;
@@ -54,6 +54,8 @@ nav {
   width: 500px;
   height: 800px;
   justify-content: center;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.33); 
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.33);
 }
 
 .wwContainer {
