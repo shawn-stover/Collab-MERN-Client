@@ -112,6 +112,8 @@ export default function Register(props) {
                   variant="outlined"
                   required
                   fullWidth
+                  onChange={e => setName(e.target.value)}
+                  value={name}
                   id="lastName"
                   label="Last Name"
                   name="lastName"
