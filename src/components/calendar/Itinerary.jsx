@@ -22,7 +22,7 @@ export default function Itinerary() {
     const eventList = eventData.map((activity) => {
         return (
             <ListItem>
-                {activity.title}
+                {activity.start.time.hours}:{activity.start.time.minutes}{activity.title}
             </ListItem>
         )
     })

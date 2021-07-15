@@ -5,7 +5,7 @@ import Box from '@material-ui/core/Box'
 export default function Weather() {
     
     const [weather, setWeather] = useState()
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=seattle&units=imperial&appid=${process.env.REACT_APP_WEATHER_API}`
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=seattle&units=imperial&appid=${process.env.REACT_APP_WEATHER_API}`
     
 
     //call to weather API for data
