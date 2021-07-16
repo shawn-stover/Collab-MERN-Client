@@ -86,6 +86,11 @@ function App() {
         <Route path="/calendar/weekview" 
         render={props=> <WeekView {...props} currentUser={currentUser}/>} />
 
+        <Route
+
+        exact path="/calendar/day"
+        component={DayView} />
+
         </Switch>  
       </div>
     </Router>

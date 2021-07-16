@@ -30,8 +30,10 @@ export default function CalendarView(props) {
         } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
       }
       getEvents()
+      
     }, [currentMonth]);
     console.log("🍗", monthEvents)
+
     
       const getEventsAfterCreate = async () => {
         setStatus("loading");
@@ -59,9 +61,9 @@ export default function CalendarView(props) {
             </TabItem>
             <TabItem
               style={{ backgroundColor: "white" }}
-              onClick={() => history.push(`/date/${format(new Date(), "d")}`)}
+              // onClick={() => history.push(`/date/${format(new Date(), "d")}`)}
             >
-              <Link to="/calendar/daily">
+              <Link to="/calendar/day">
               Daily
               </Link>
             </TabItem>
@@ -100,7 +102,7 @@ export default function CalendarView(props) {
           </EventsSection>
         </>
       )}
-      
+      <h2>Select a View</h2>
       </Wrapper>
     )
 }  
@@ -195,9 +197,9 @@ const EventTitle = styled.div`
   font-size: 1.4rem;
 `;
 
-{/* <NavIcon>
-          <AiOutlineHome onClick={() => history.push("/")} size={30} />
-        </NavIcon>
-        <NavIcon>
-          <BiArrowBack onClick={() => history.goBack()} size={30} />
-        </NavIcon> */}
+// {/* <NavIcon>
+//           <AiOutlineHome onClick={() => history.push("/")} size={30} />
+//         </NavIcon>
+//         <NavIcon>
+//           <BiArrowBack onClick={() => history.goBack()} size={30} />
+//         </NavIcon> */

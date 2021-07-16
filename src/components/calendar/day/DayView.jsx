@@ -5,6 +5,7 @@ import NewEvent from "../components/NewEvent"
 //import DateSection from "./DateSection";
 import NoEventToday from "./NoEventToday";
 import SingleEvent from "./SingleEvent"
+// import Itinerary from './Itinerary'
 
 export default function DayView() {
     const [dayEvents, setDayEvents] = useState([]);
@@ -41,6 +42,9 @@ export default function DayView() {
       };
     return(
         <Wrapper>
+          <div>
+            👋
+          </div>
           <NewEvent refreshEvents={getDayEventsAfterDeleteAdd} />
       <Tabs>
         {/* <NavIcon>
