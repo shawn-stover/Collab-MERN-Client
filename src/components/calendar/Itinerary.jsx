@@ -42,11 +42,11 @@ export default function Itinerary(props) {
     )
 }
 
-// const List = styled.div`
-// `
-// const ListItem = styled.div`
-//     padding: 5px 0px;
-// `
+const List = styled.div`
+`
+const ListItem = styled.div`
+    padding: 5px 0px;
+`
 const Wrapper = styled.div`
     width: 190px;
     margin: 10px 0px;

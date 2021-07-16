@@ -4,7 +4,7 @@ import axios from 'axios'
 import Cal from './Cal'
 import NewEvent from "./components/NewEvent"
 
-// import Itinerary from "./Itinerary";
+import Itinerary from "./Itinerary";
 import { useHistory, Link } from "react-router-dom";
 
 import { format } from "date-fns";
@@ -60,8 +60,7 @@ export default function CalendarView(props) {
       <Wrapper>
 
         <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser}/>
-        <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser} />
-
+        
         <TabsWrapper>
           <Tabs>
             <TabItem onClick={() => history.push("/calendar-month")}>
