@@ -42,9 +42,6 @@ export default function DayView() {
       };
     return(
         <Wrapper>
-          <div>
-            👋
-          </div>
           <NewEvent refreshEvents={getDayEventsAfterDeleteAdd} />
       <Tabs>
         {/* <NavIcon>
