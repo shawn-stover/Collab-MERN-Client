@@ -30,6 +30,12 @@ export default function CalendarView(props) {
           } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
         }
         getEvents()
+        fetch(`/events/month/${currentMonth}`)
+          .then((res) => res.json())
+          .then((res) => {
+            setMonthEvents(res.data);
+            setStatus("idle")
+         }).catch((error) => console.log("💥error!", error));
       }, [currentMonth]);
     
     
@@ -48,7 +54,10 @@ export default function CalendarView(props) {
       };
     return(
       <Wrapper>
+
         <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser}/>
+        <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser} />
+
         <TabsWrapper>
           <Tabs>
             <TabItem onClick={() => history.push("/calendar-month")}>
