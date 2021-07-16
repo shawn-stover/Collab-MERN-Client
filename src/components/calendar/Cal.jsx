@@ -71,30 +71,30 @@ export default function Cal({updateCurrentMonth}) {
         
     )
 }
-const People = styled.div`
-    width: 190px;
-    margin: 10px 0px;
-    .h3 {
-      margin: 5px 0px;
-      padding: 10px 0px;
-    }
-    &:hover {
-      text-decoration: underline;
-    }
-`
+// const People = styled.div`
+//     width: 190px;
+//     margin: 10px 0px;
+//     .h3 {
+//       margin: 5px 0px;
+//       padding: 10px 0px;
+//     }
+//     &:hover {
+//       text-decoration: underline;
+//     }
+// `
 
-const Events = styled.div`
-    width: 190px;
-    margin: 10px 0px;
-    .p {
-      font-size: 10px;
-      margin: 5px 0px;
-      padding: 10px 0px;
-    }
-    &:hover {
-      text-decoration: underline;
-    }
-`
+// const Events = styled.div`
+//     width: 190px;
+//     margin: 10px 0px;
+//     .p {
+//       font-size: 10px;
+//       margin: 5px 0px;
+//       padding: 10px 0px;
+//     }
+//     &:hover {
+//       text-decoration: underline;
+//     }
+// `
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;

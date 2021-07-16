@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import styled from "styled-components";
-import { GrLocation } from "react-icons/gr";
-import { AiOutlineHome } from "react-icons/ai";
-import { BiArrowBack } from "react-icons/bi";
 import NewEvent from "../components/NewEvent"
-import DateSection from "./DateSection";
+//import DateSection from "./DateSection";
 import NoEventToday from "./NoEventToday";
 import SingleEvent from "./SingleEvent"
 
@@ -14,13 +11,14 @@ export default function DayView() {
     const [status, setStatus] = useState("loading");
     const history = useHistory();
     const params = useParams();
-    const today = new Date(
-      params.date.slice(0, 4),
-      params.date.slice(5, 7) - 1,
-      params.date.slice(8, 10)
-    );
+    // const today = new Date(
+    //   params.date.slice(0, 4),
+    //   params.date.slice(5, 7) - 1,
+    //   params.date.slice(8, 10)
+    // );
     useEffect(() => {
         setStatus("loading");
+        //AXIOS GET ROUTE 
         fetch(`/events/date/${params.date}`)
           .then((res) => res.json())
           .then((res) => {
@@ -33,6 +31,7 @@ export default function DayView() {
       const getDayEventsAfterDeleteAdd = async () => {
         setStatus("loading");
         await fetch(`/events/date/${params.date}`)
+        //AXIOS GET ROUTE
           .then((res) => res.json())
           .then((res) => {
             setDayEvents(res.data);
@@ -44,12 +43,12 @@ export default function DayView() {
         <Wrapper>
           <NewEvent refreshEvents={getDayEventsAfterDeleteAdd} />
       <Tabs>
-        <NavIcon>
+        {/* <NavIcon>
           <AiOutlineHome onClick={() => history.push("/")} size={30} />
-        </NavIcon>
-        <NavIcon>
+        </NavIcon> */}
+        {/* <NavIcon>
           <BiArrowBack onClick={() => history.goBack()} size={30} />
-        </NavIcon>
+        </NavIcon> */}
         <TabItem
           onClick={() => history.push("/calendar-month")}
           style={{ backgroundColor: "white" }}
@@ -64,7 +63,7 @@ export default function DayView() {
         </TabItem>
         <TabItem>Day</TabItem>
       </Tabs>
-      <DateSection today={today} />
+      {/* <DateSection today={today} /> */}
       {status === "loading" ? null : (
         <ContentSection>
           {dayEvents.length === 0 ? (
@@ -92,13 +91,13 @@ const Tabs = styled.div`
   margin-top: 2px;
   margin-right: 3px;
 `;
-const NavIcon = styled.div`
-  padding: 0 5px;
-  color: rgb(222, 87, 102);
-  border: 1px solid rgb(222, 87, 102);
-  border-radius: 4px;
-  margin: 0 3px;
-`;
+// const NavIcon = styled.div`
+//   padding: 0 5px;
+//   color: rgb(222, 87, 102);
+//   border: 1px solid rgb(222, 87, 102);
+//   border-radius: 4px;
+//   margin: 0 3px;
+// `;
 const TabItem = styled.div`
   flex-grow: 1;
   text-align: center;

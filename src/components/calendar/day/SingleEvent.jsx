@@ -26,7 +26,7 @@ export default function SingleEvent({dayEvents, refreshEvents}) {
             <div className="RightBox">
                 <EventContentBox
                 style={{
-                    borderLeft: `5px solid ${dayColors[colorIndex++]}`,
+                    borderLeft: `5px solid black}`,
                     }}>
                 <div className="nameNdesc">
                     <EventTitle>{dayEvent.title}</EventTitle>
@@ -36,20 +36,20 @@ export default function SingleEvent({dayEvents, refreshEvents}) {
                 </div>
                 {dayEvent.location ? (
                     <EventLocation>
-                    <GrLocation size="13" /> {dayEvent.location}
+                     {dayEvent.location}
                     </EventLocation>
                 ) : null}
                 </EventContentBox>
 
                 <EventButtonBox>
                 <EventButtons>
-                    <EditEventDialog
+                    <EditEvent
                     currentEvent={dayEvent}
                     refreshEvents={refreshEvents}
                     />
                 </EventButtons>
                 <EventButtons>
-                    <DeleteEventDialog
+                    <DeleteEvent
                     eventId={dayEvent._id}
                     refreshEvents={refreshEvents}
                     />

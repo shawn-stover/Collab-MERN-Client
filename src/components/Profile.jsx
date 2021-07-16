@@ -2,17 +2,18 @@ import { useState, useEffect } from "react"
 import { Redirect, Link } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
-import Cal from './calendar/Cal'
-import CalendarView from './calendar/CalendarView'
+//import Cal from './calendar/Cal'
+//import CalendarView from './calendar/CalendarView'
 import Weather from './Weather'
 import styled from 'styled-components'
 import { RightArrow } from '@styled-icons/boxicons-regular/RightArrow'
 import { Calendar } from '@styled-icons/boxicons-regular/Calendar'
-
+import Itinerary from './calendar/Itinerary'
 
 const Events = styled.div`
 width: 190px;
-margin: 10px 0px;
+margin: 0 auto;
+margin-top: 10px;
 .h2 {
   margin: 5px 0px;
   padding: 10px 0px;
@@ -90,7 +91,8 @@ export default function Profile(props) {
                                         <h2>Today's Schedule:</h2>
                                         <br></br>
                                         <Arrows>
-                                        <h3><RightArrow size="10"/><span>1:00pm</span> - Wallow in self pity</h3>
+                                            <Itinerary />
+                                        {/* <h3><RightArrow size="10"/><span>1:00pm</span> - Wallow in self pity</h3>
                                         <br></br> 
                                         <h3><RightArrow size="10"/><span>4:30pm</span> - Stare into the abyss</h3>
                                         <br></br>
@@ -102,7 +104,7 @@ export default function Profile(props) {
                                         <br></br>
                                         <h3><RightArrow size="10"/><span>7:00pm</span> - Wrestle with my self loathing</h3>
                                         <br></br>
-                                        <br></br>
+                                        <br></br> */}
                                         <SeeCalendar>
                                         <Link to="/calendar"><Calendar color="#3f51b5"/></Link>
                                         </SeeCalendar>

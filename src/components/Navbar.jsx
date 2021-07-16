@@ -61,27 +61,27 @@ export default function Navbar(props) {
         </div>
     )
 }
-const Search = styled.form`
-    display: flex;
-    justify-content: center;
-    padding-right: 50px;
-    .search {
-        color: black;
-        width: 400px;
-        height: 30px;
-        border: none;
-        background: rgba(145, 145, 145, 0.555);
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
-    }
-    .button {
-        color: white;
-        background: rgba(145, 145, 145, 0.555);
-        border: none;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-`
+// const Search = styled.form`
+//     display: flex;
+//     justify-content: center;
+//     padding-right: 50px;
+//     .search {
+//         color: black;
+//         width: 400px;
+//         height: 30px;
+//         border: none;
+//         background: rgba(145, 145, 145, 0.555);
+//         border-top-left-radius: 15px;
+//         border-bottom-left-radius: 15px;
+//     }
+//     .button {
+//         color: white;
+//         background: rgba(145, 145, 145, 0.555);
+//         border: none;
+//         border-top-right-radius: 15px;
+//         border-bottom-right-radius: 15px;
+//     }
+// `
 const Nav = styled.nav`
     .home {
         width: 50px;
