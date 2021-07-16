@@ -5,7 +5,7 @@ import Cal from './Cal'
 import NewEvent from "./components/NewEvent"
 
 // import Itinerary from "./Itinerary";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import { format } from "date-fns";
 //import DayView from './day/DayView'
