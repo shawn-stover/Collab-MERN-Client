@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import { Redirect, Link } from "react-router-dom"
 import axios from 'axios'
 import Login from './Login'
-import Cal from './calendar/Cal'
-import CalendarView from './calendar/CalendarView'
+//import Cal from './calendar/Cal'
+//import CalendarView from './calendar/CalendarView'
 import Weather from './Weather'
 import styled from 'styled-components'
 import { RightArrow } from '@styled-icons/boxicons-regular/RightArrow'

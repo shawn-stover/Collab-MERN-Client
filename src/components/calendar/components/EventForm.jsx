@@ -26,7 +26,8 @@ const INITIAL_EVENT = {
   }
 
 
-export default function EventForm({ closeDialog, refreshEvents }) {
+export default function EventForm({currentUser, closeDialog, refreshEvents }) {
+  console.log(currentUser, '🧯, 30')
     const [form, setForm] = useState(INITIAL_EVENT);
     const [buttonDisabled, setButtonDisabled] = useState(true);
     const [status, setStatus] = useState("idle");
@@ -60,14 +61,21 @@ export default function EventForm({ closeDialog, refreshEvents }) {
       const CreateEvent = async (event) => {
         try {
           event.preventDefault();
-          console.log(JSON.stringify(form, null, 2))
-          const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/createevent`, form)
+
+          setStatus("loading");
+          //console.log(JSON.stringify(form, null, 2))
+          const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/createevent`, { ...INITIAL_EVENT, userId: currentUser.id })
+
           console.log(response)
+          refreshEvents()
+          setStatus("created!")
+          setButtonDisabled(true)
           //Axios 👹 post 👾 here 
           //Schema mama
-        setStatus("loading");
         } catch(error) {
-            console.log("error!💀", error)
+          setStatus("❌ error! ❌")
+            console.log("error in event form!💀", error)
+            setButtonDisabled(true)
         }
       }
 //    ^^^ CONSOLE.LOG - WHAT GOES TO JSONs 
@@ -207,7 +215,7 @@ export default function EventForm({ closeDialog, refreshEvents }) {
           </ButtonClose>
           <ButtonCreate
             onClick={(ev) => CreateEvent(ev)}
-            disabled={buttonDisabled}
+            //disabled={buttonDisabled}
           >
             {/* ^^ console.log== CreateEvent(ev) */}
             {status === "idle" ? (
