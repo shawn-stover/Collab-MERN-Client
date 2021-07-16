@@ -42,5 +42,5 @@ expect for any outdoor activities and you are good to go!
 
 ## Wireframes
 
-![PDF of wireframes](public/img/Group7.pdf)
+[PDF of wireframes](public/img/Group7.pdf)
 
