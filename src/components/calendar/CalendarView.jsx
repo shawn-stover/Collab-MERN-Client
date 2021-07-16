@@ -19,7 +19,7 @@ export default function CalendarView(props) {
 
     const updateCurrentMonth = (month) => setCurrentMonth(month);
 
-    useEffect(() => {
+    useEffect(async () => {
       setStatus("loading");
       const getEvents = async () => {
         //AXIOS .GET ROUTE
@@ -28,11 +28,10 @@ export default function CalendarView(props) {
           console.log("👹 👹", response.data.allEvents)
           setMonthEvents(response.data.allEvents)
         } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
-        console.log("👾👾 ", monthEvents)
       }
       getEvents()
     }, [currentMonth]);
-    
+    console.log("🍗", monthEvents)
     
       const getEventsAfterCreate = async () => {
         setStatus("loading");
@@ -72,7 +71,7 @@ export default function CalendarView(props) {
           </Tabs>
         </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
-      <Itinerary eventData={monthEvents}/>
+      <Itinerary monthEvents={monthEvents}/>
 
       {status === "loading" ? null : (
         <>
