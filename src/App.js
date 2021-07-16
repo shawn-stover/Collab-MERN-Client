@@ -5,7 +5,6 @@ import Profile from './components/Profile'
 import Register from './components/Register'
 import Welcome from './components/Welcome'
 
-// import SignUp_In from './components/SignUp_In'
 
 import {
   BrowserRouter as Router,
@@ -81,7 +80,9 @@ function App() {
         />
         <Route 
         path="/calendar" 
-        component={CalendarView}/>
+        // component={CalendarView}
+        // render={ props => currentUser ? <CalendarView {...props} currentUser= {currentUser}/> : <Redirect to="/login" />} />
+                  render={ props => <CalendarView {...props} currentUser= {currentUser}/>} />
         </Switch>  
       </div>
     </Router>

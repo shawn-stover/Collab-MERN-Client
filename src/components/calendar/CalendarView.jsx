@@ -9,7 +9,7 @@ import { format } from "date-fns";
 
 //import { BiArrowBack } from "react-icons/bi";
 
-export default function CalendarView() {
+export default function CalendarView(props) {
     const history = useHistory();
     const [status, setStatus] = useState("loading");
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
@@ -24,8 +24,7 @@ export default function CalendarView() {
           .then((res) => {
             setMonthEvents(res.data);
             setStatus("idle")
-         })
-          .catch((error) => console.log("💥error!", error));
+         }).catch((error) => console.log("💥error!", error));
       }, [currentMonth]);
     
       
@@ -43,7 +42,7 @@ export default function CalendarView() {
       };
     return(
       <Wrapper>
-        <NewEvent refreshEvents={getEventsAfterCreate} />
+        <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser} />
         <TabsWrapper>
           <Tabs>
             <TabItem onClick={() => history.push("/calendar-month")}>
