@@ -4,12 +4,12 @@ import axios from 'axios'
 import Cal from './Cal'
 import NewEvent from "./components/NewEvent"
 import Itinerary from "./Itinerary";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { format } from "date-fns";
-
+//import DayView from './day/DayView'
 //import { BiArrowBack } from "react-icons/bi";
 
-export default function CalendarView() {
+export default function CalendarView(props) {
     const history = useHistory();
     const [status, setStatus] = useState("loading");
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
@@ -19,33 +19,34 @@ export default function CalendarView() {
 
     useEffect(() => {
         setStatus("loading");
-        fetch(`/events/month/${currentMonth}`)
-        //AXIOS .GET ROUTE
-          
-        .then((res) => res.json())
-          .then((res) => {
-            setMonthEvents(res.data);
-            setStatus("idle")
-         })
-          .catch((error) => console.log("💥error!", error));
+        const getEvents = async () => {
+          //AXIOS .GET ROUTE
+          try {
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/allevents`)
+            setMonthEvents(response.data)
+            console.log(response.data)
+          } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
+        }
+        getEvents()
       }, [currentMonth]);
     
-      
     
       const getEventsAfterCreate = async () => {
         setStatus("loading");
-    
-        await fetch(`/events/month/${currentMonth}`)
-          .then((res) => res.json())
-          .then((res) => {
-            setMonthEvents(res.data);
-            setStatus("idle");
-          })
-          .catch((error) => console.log("💣error!", error));
+        try {
+          const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/allevents`)
+          console.log(response.data)
+          //setMonthEvents(response.data)
+          setStatus("idle")
+        } catch (error) {
+          console.log("ERROR IN THE CALENDAR VIEW", error)
+        }
+        //AXIOS .GET ROUTE
+        // 💅
       };
     return(
       <Wrapper>
-        <NewEvent refreshEvents={getEventsAfterCreate} />
+        <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser}/>
         <TabsWrapper>
           <Tabs>
             <TabItem onClick={() => history.push("/calendar-month")}>
@@ -59,9 +60,11 @@ export default function CalendarView() {
             </TabItem>
             <TabItem
               style={{ backgroundColor: "white" }}
-              onClick={() => history.push(`/date/${format(new Date(), "y-MM-dd")}`)}
+              onClick={() => console.log(`/date/${format(new Date(), "y-MM-dd")}`)}
             >
+              <Link to="/calendar/daily">
               Daily
+              </Link>
             </TabItem>
           </Tabs>
         </TabsWrapper>
@@ -98,6 +101,7 @@ export default function CalendarView() {
           </EventsSection>
         </>
       )}
+      
       </Wrapper>
     )
 }  

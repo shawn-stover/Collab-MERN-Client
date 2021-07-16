@@ -8,7 +8,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
   });
 
-export default function NewEvent({refreshEvents}) {
+export default function NewEvent({currentUser, refreshEvents}) {
 const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -28,7 +28,7 @@ const [open, setOpen] = React.useState(false);
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-          <EventForm closeDialog={handleClose} refreshEvents={refreshEvents} />
+          <EventForm closeDialog={handleClose} refreshEvents={refreshEvents} currentUser={currentUser}/>
           </Dialog>
         </Wrapper>
     )

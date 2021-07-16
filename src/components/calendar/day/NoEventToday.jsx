@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
 export default function NoEventToday() {
+  let history = useHistory()
     return(
         <Wrapper>
       <p>You have nothing planned for the day!</p>
