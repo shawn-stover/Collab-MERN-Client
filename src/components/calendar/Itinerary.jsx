@@ -22,16 +22,20 @@ export default function Itinerary() {
     const eventList = eventData.map((activity) => {
         return (
             <ListItem>
-                {activity.start.time.hours}:{activity.start.time.minutes}{activity.title}
+                <RightArrow size="10"/> 
+                {activity.start.time.hours}:{activity.start.time.minutes } { activity.title}
+                <br></br>
+                <br></br>
             </ListItem>
         )
     })
     return(
         <Wrapper>
-            <h2>Today's Schedule:</h2>
+            <div className='itineraryText'>
             <List>
-                <RightArrow size="10"/>{eventList}
+                {eventList}
             </List>
+            </div>
         </Wrapper>
     )
 }

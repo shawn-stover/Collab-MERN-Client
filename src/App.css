@@ -29,6 +29,10 @@ body {
   align-items: center;
 }  
 
+.itineraryText {
+  font-size: 16px;
+}
+
 /* .welcome {
   border-bottom: 2px solid lightgrey;
   background-color: lightgrey;
