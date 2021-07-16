@@ -28,7 +28,6 @@
 //           .catch((error) => console.log("error!", error));
 //       }, [params]);
     
-<<<<<<< HEAD
 //       const getDayEventsAfterDeleteAdd = async () => {
 //         setStatus("loading");
 //         await fetch(`/events/date/${params.date}`)
@@ -84,7 +83,7 @@
 // }
 // const Wrapper = styled.div`
 //   min-height: 100vh;
-=======
+
       const getDayEventsAfterDeleteAdd = async () => {
         setStatus("loading");
         await fetch(`/events/date/${params.date}`)
