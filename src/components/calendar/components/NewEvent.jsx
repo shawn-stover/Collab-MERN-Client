@@ -28,7 +28,11 @@ const [open, setOpen] = React.useState(false);
         onClose={handleClose}
         TransitionComponent={Transition}
       >
+
           <EventForm closeDialog={handleClose} refreshEvents={refreshEvents} currentUser={currentUser}/>
+
+          <EventForm closeDialog={handleClose} refreshEvents={refreshEvents} currentUser={currentUser} />
+
           </Dialog>
         </Wrapper>
     )

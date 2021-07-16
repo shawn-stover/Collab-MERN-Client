@@ -5,6 +5,10 @@ import Profile from './components/Profile'
 import Register from './components/Register'
 import Welcome from './components/Welcome'
 
+
+
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -80,8 +84,15 @@ function App() {
           render={ props => currentUser ? <Profile {...props} currentUser= {currentUser} handleLogout= {handleLogout}/> : <Redirect to="/login" />}
         />
         <Route 
+
         exact path="/calendar" 
         render={ props => <CalendarView {...props} currentUser= {currentUser}/>} />
+
+
+        path="/calendar" 
+        // component={CalendarView}
+        // render={ props => currentUser ? <CalendarView {...props} currentUser= {currentUser}/> : <Redirect to="/login" />} />
+                  render={ props => <CalendarView {...props} currentUser= {currentUser}/>} />
 
         </Switch>  
       </div>

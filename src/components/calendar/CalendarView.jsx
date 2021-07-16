@@ -25,11 +25,21 @@ export default function CalendarView(props) {
           //AXIOS .GET ROUTE
           try {
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/allevents`)
-            setMonthEvents(response.data)
-            console.log(response.data)
+            console.log("👹 👹", response.data)
+            setMonthEvents(response.data.allEvents)
+            // if(response.data.length > 1) {
+            //   console.log(response.data.length)
+            // }
+            console.log("👾👾 ", MonthEvents)
           } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
         }
         getEvents()
+        fetch(`/events/month/${currentMonth}`)
+          .then((res) => res.json())
+          .then((res) => {
+            setMonthEvents(res.data);
+            setStatus("idle")
+         }).catch((error) => console.log("💥error!", error));
       }, [currentMonth]);
     
     
@@ -48,7 +58,10 @@ export default function CalendarView(props) {
       };
     return(
       <Wrapper>
+
         <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser}/>
+        <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser} />
+
         <TabsWrapper>
           <Tabs>
             <TabItem onClick={() => history.push("/calendar-month")}>
@@ -62,7 +75,7 @@ export default function CalendarView(props) {
             </TabItem>
             <TabItem
               style={{ backgroundColor: "white" }}
-              onClick={() => console.log(`/date/${format(new Date(), "y-MM-dd")}`)}
+              onClick={() => history.push(`/date/${format(new Date(), "d")}`)}
             >
               <Link to="/calendar/daily">
               Daily
@@ -71,7 +84,7 @@ export default function CalendarView(props) {
           </Tabs>
         </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
-      {/* <Itinerary /> */}
+      <Itinerary eventData={MonthEvents}/>
 
       {status === "loading" ? null : (
         <>
