@@ -42,8 +42,9 @@ export default function DayView() {
       };
     return(
         <Wrapper>
-          {/* <Itinerary /> */}
-          <h1>Your Day At A Glance</h1>
+          <div>
+            👋
+          </div>
           <NewEvent refreshEvents={getDayEventsAfterDeleteAdd} />
       <Tabs>
         {/* <NavIcon>
