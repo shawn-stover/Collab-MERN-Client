@@ -216,11 +216,6 @@ export default function EventForm({currentUser, closeDialog, refreshEvents }) {
           </ButtonClose>
           <ButtonCreate
             onClick={(ev) => CreateEvent(ev)}
-            
-            //disabled={buttonDisabled}
-            
-            // disabled={buttonDisabled}
-
           >
             {/* ^^ console.log== CreateEvent(ev) */}
             {status === "idle" ? (

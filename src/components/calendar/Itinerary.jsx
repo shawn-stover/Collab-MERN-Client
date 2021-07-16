@@ -17,10 +17,12 @@ export default function Itinerary({monthEvents}) {
         }
         
         getDailyEvents()
-        console.log("🍍", eventData)
+        console.log("🍍")
     }, [])
 
-    const eventList = eventData.map((activity, key) => {
+console.log("🍕 🍕", monthEvents)
+    const eventList = monthEvents.map((activity, key) => {
+
         return (
             <ListItem>
                 <RightArrow size="10"/> 

@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import axios from 'axios'
 import Cal from './Cal'
 import NewEvent from "./components/NewEvent"
-
+import WeekView from "./week/WeekView";
 import Itinerary from "./Itinerary";
 import { useHistory, Link } from "react-router-dom";
 
@@ -56,11 +56,8 @@ export default function CalendarView(props) {
             <TabItem onClick={() => history.push("/calendar-month")}>
               Monthly
             </TabItem>
-            <TabItem
-              onClick={() => history.push(`/week/${format(new Date(), "y-MM-dd")}`)}
-              style={{ backgroundColor: "white" }}
-            >
-              Weekly
+            <TabItem>
+            <Link to="/calendar/weekview">Weekly</Link>
             </TabItem>
             <TabItem
               style={{ backgroundColor: "white" }}
