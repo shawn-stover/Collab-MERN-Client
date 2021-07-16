@@ -3,8 +3,8 @@ import styled, { keyframes } from "styled-components";
 import axios from 'axios'
 import Cal from './Cal'
 import NewEvent from "./components/NewEvent"
-
-// import Itinerary from "./Itinerary";
+import WeekView from "./week/WeekView";
+import Itinerary from "./Itinerary";
 import { useHistory, Link } from "react-router-dom";
 
 import { format } from "date-fns";
@@ -15,23 +15,25 @@ export default function CalendarView(props) {
     const history = useHistory();
     const [status, setStatus] = useState("loading");
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
-    const [MonthEvents, setMonthEvents] = useState([]);
+    const [monthEvents, setMonthEvents] = useState([]);
 
     const updateCurrentMonth = (month) => setCurrentMonth(month);
 
-    useEffect(async() => {
-        setStatus("loading");
-        const getEvents = async () => {
-          //AXIOS .GET ROUTE
-          try {
-            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/allevents`)
-            setMonthEvents(response.data)
-            console.log(response.data)
-          } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
-        }
-        getEvents()
-      }, [currentMonth]);
-    
+    useEffect(async () => {
+      setStatus("loading");
+      const getEvents = async () => {
+        //AXIOS .GET ROUTE
+        try {
+          const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/allevents`)
+          console.log("👹 👹", response.data.allEvents)
+          setMonthEvents(response.data.allEvents)
+        } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
+      }
+      getEvents()
+      
+    }, [currentMonth]);
+    console.log("🍗", monthEvents)
+
     
       const getEventsAfterCreate = async () => {
         setStatus("loading");
@@ -54,29 +56,26 @@ export default function CalendarView(props) {
             <TabItem onClick={() => history.push("/calendar-month")}>
               Monthly
             </TabItem>
-            <TabItem
-              onClick={() => history.push(`/week/${format(new Date(), "y-MM-dd")}`)}
-              style={{ backgroundColor: "white" }}
-            >
-              Weekly
+            <TabItem>
+            <Link to="/calendar/weekview">Weekly</Link>
             </TabItem>
             <TabItem
               style={{ backgroundColor: "white" }}
-              onClick={() => console.log(`/date/${format(new Date(), "y-MM-dd")}`)}
+              // onClick={() => history.push(`/date/${format(new Date(), "d")}`)}
             >
-              <Link to="/calendar/daily">
+              <Link to="/calendar/day">
               Daily
               </Link>
             </TabItem>
           </Tabs>
         </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
-      {/* <Itinerary /> */}
+      <Itinerary monthEvents={monthEvents}/>
 
       {status === "loading" ? null : (
         <>
           <EventsSection>
-            {MonthEvents.map((ev) => (
+            {monthEvents.map((ev) => (
               <EventBox
                 onClick={() =>
                   console.log(`/date/${format(new Date(ev.date), "y-MM-dd")}`)
