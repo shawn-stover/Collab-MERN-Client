@@ -30,6 +30,7 @@ export default function CalendarView(props) {
         } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
       }
       getEvents()
+      
     }, [currentMonth]);
     console.log("🍗", monthEvents)
     
@@ -62,9 +63,9 @@ export default function CalendarView(props) {
             </TabItem>
             <TabItem
               style={{ backgroundColor: "white" }}
-              onClick={() => history.push(`/date/${format(new Date(), "d")}`)}
+              // onClick={() => history.push(`/date/${format(new Date(), "d")}`)}
             >
-              <Link to="/calendar/daily">
+              <Link to="/calendar/day">
               Daily
               </Link>
             </TabItem>
