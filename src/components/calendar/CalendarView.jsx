@@ -70,7 +70,7 @@ export default function CalendarView(props) {
           </Tabs>
         </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
-      <Itinerary monthEvents={monthEvents}/>
+      
 
       {status === "loading" ? null : (
         <>
