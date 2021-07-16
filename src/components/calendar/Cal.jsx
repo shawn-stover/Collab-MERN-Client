@@ -26,36 +26,6 @@ export default function Cal({updateCurrentMonth}) {
     return(
         
             <Wrapper>
-            {/* <Events>
-              <h4>Upcoming Events</h4>
-              <br></br>
-              <p className="event"><span>10:00am </span>- Brunch with Bill</p><hr />
-              <p className="event"><span>12:00pm</span> - Lunch with Jill</p><hr />
-              <p className="event"><span>2:00pm</span> - Meeting with Brian</p><hr />
-              <p className="event"><span>5:00pm</span> - Pickup Jenny</p><hr />
-            </Events> */}
-            {/* <People>
-              <label for='checkboxBill'>
-                Bill
-              </label>
-              <input type='checkbox' name='checkboxBill' />
-              <br></br>
-              <label for='checkboxJill'>
-                Jill
-              </label>
-              <input type='checkbox' name='checkboxJill' />
-              <br></br>
-              <label for='checkboxBrian'>
-                Brian
-              </label>
-              <input type='checkbox' name='checkboxBrian' />
-              <br></br>
-              <label for='checkboxJenny'>
-                Jenny
-              </label>
-              <input type='checkbox' name='checkboxJenny' />
-              <br></br>
-            </People> */}
             <Calendar
                  tileContent={tileContent}
                  onChange={onChange}
@@ -71,30 +41,7 @@ export default function Cal({updateCurrentMonth}) {
         
     )
 }
-// const People = styled.div`
-//     width: 190px;
-//     margin: 10px 0px;
-//     .h3 {
-//       margin: 5px 0px;
-//       padding: 10px 0px;
-//     }
-//     &:hover {
-//       text-decoration: underline;
-//     }
-// `
 
-// const Events = styled.div`
-//     width: 190px;
-//     margin: 10px 0px;
-//     .p {
-//       font-size: 10px;
-//       margin: 5px 0px;
-//       padding: 10px 0px;
-//     }
-//     &:hover {
-//       text-decoration: underline;
-//     }
-// `
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
