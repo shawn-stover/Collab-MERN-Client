@@ -1,6 +1,26 @@
-# Getting Started with Create React App
+# Welcome to the Falendar App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![screenshot of Falendar](public/img/FalendarScreenShot.png)
+
+### Technologies Used
+    Database Structure:
+        Mongo/Mongoose
+    Server:
+        Express
+    Front-end Language:
+        React.js
+    Back-end Language:
+        Node.js
+
+### Installation
+
+    Fork and clone this repo
+
+    run npm i to install dependencies
+
+    .env will require a connection to your separate server repo 
+
+    if you want the weather app to function, you will need an API key from [Open Weather] (https://openweathermap.org/api)
 
 ## Available Scripts
 
