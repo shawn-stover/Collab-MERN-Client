@@ -19,7 +19,7 @@ export default function CalendarView(props) {
 
     const updateCurrentMonth = (month) => setCurrentMonth(month);
 
-    useEffect(() => {
+    useEffect(async() => {
         setStatus("loading");
         const getEvents = async () => {
           //AXIOS .GET ROUTE
@@ -103,7 +103,7 @@ export default function CalendarView(props) {
           </EventsSection>
         </>
       )}
-      
+      <h2>Select a View</h2>
       </Wrapper>
     )
 }  
@@ -198,9 +198,9 @@ const EventTitle = styled.div`
   font-size: 1.4rem;
 `;
 
-{/* <NavIcon>
-          <AiOutlineHome onClick={() => history.push("/")} size={30} />
-        </NavIcon>
-        <NavIcon>
-          <BiArrowBack onClick={() => history.goBack()} size={30} />
-        </NavIcon> */}
+// {/* <NavIcon>
+//           <AiOutlineHome onClick={() => history.push("/")} size={30} />
+//         </NavIcon>
+//         <NavIcon>
+//           <BiArrowBack onClick={() => history.goBack()} size={30} />
+//         </NavIcon> */
