@@ -21,19 +21,23 @@ export default function Itinerary(props) {
 
     const eventList = props.eventData.map((activity, key) => {
         return (
-            <li key={key}>
-                {activity.title},
+            <ListItem>
+                <RightArrow size="10"/> 
+                {activity.start.time.hours}:{activity.start.time.minutes } { activity.title}
                 {activity.description}:
                 {activity.start.date}
-            </li>
+                <br></br>
+                <br></br>
+            </ListItem>
         )
     })
     return(
         <Wrapper>
-            <h2>Today's Schedule:</h2>
-            <ul>
-                <RightArrow size="10"/>{eventList}
-            </ul>
+            <div className='itineraryText'>
+            <List>
+                {eventList}
+            </List>
+            </div>
         </Wrapper>
     )
 }
