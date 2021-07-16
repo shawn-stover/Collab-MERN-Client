@@ -28,7 +28,6 @@
 //           .catch((error) => console.log("error!", error));
 //       }, [params]);
     
-<<<<<<< HEAD
 //       const getDayEventsAfterDeleteAdd = async () => {
 //         setStatus("loading");
 //         await fetch(`/events/date/${params.date}`)
@@ -84,65 +83,63 @@
 // }
 // const Wrapper = styled.div`
 //   min-height: 100vh;
-=======
-      const getDayEventsAfterDeleteAdd = async () => {
-        setStatus("loading");
-        await fetch(`/events/date/${params.date}`)
-        //AXIOS GET ROUTE
-          .then((res) => res.json())
-          .then((res) => {
-            setDayEvents(res.data);
-            setStatus("idle");
-          })
-          .catch((error) => console.log("error!", error));
-      };
-    return(
-        <Wrapper>
-          <NewEvent refreshEvents={getDayEventsAfterDeleteAdd} />
-      <Tabs>
-        {/* <NavIcon>
-          <AiOutlineHome onClick={() => history.push("/")} size={30} />
-        </NavIcon> */}
-        {/* <NavIcon>
-          <BiArrowBack onClick={() => history.goBack()} size={30} />
-        </NavIcon> */}
-        <TabItem
-          onClick={() => history.push("/calendar-month")}
-          style={{ backgroundColor: "white" }}
-        >
-          month
-        </TabItem>
-        <TabItem
-          style={{ backgroundColor: "white" }}
-          onClick={() => history.push(`/week/${params.date}`)}
-        >
-          week
-        </TabItem>
-        <TabItem>Day</TabItem>
-      </Tabs>
-      {/* <DateSection today={today} /> */}
-      {status === "loading" ? null : (
-        <ContentSection>
-          {dayEvents.length === 0 ? (
-            <NoEventToday />
-          ) : (
-            <>
-              <SingleEvent
-                dayEvents={dayEvents}
-                refreshEvents={getDayEventsAfterDeleteAdd}
-              />
-            </>
-          )}
-        </ContentSection>
-      )}
-        </Wrapper>
-    )
-}
-const Wrapper = styled.div`
-  min-height: 100vh;
->>>>>>> 67fbd1625b52e7eaa1a2a66e3184a89910566622
 
-// `;
+// const getDayEventsAfterDeleteAdd = async () => {
+//   setStatus("loading");
+//   await fetch(`/events/date/${params.date}`)
+//   //AXIOS GET ROUTE
+//     .then((res) => res.json())
+//     .then((res) => {
+//       setDayEvents(res.data);
+//       setStatus("idle");
+//     })
+//     .catch((error) => console.log("error!", error));
+// };
+// return(
+//   <Wrapper>
+//     <NewEvent refreshEvents={getDayEventsAfterDeleteAdd} />
+// <Tabs>
+  {/* <NavIcon>
+    <AiOutlineHome onClick={() => history.push("/")} size={30} />
+  </NavIcon> */}
+  {/* <NavIcon>
+    <BiArrowBack onClick={() => history.goBack()} size={30} />
+  </NavIcon> */}
+  {/* <TabItem
+    onClick={() => history.push("/calendar-month")}
+    style={{ backgroundColor: "white" }}
+  >
+    month
+  </TabItem>
+  <TabItem
+    style={{ backgroundColor: "white" }}
+    onClick={() => history.push(`/week/${params.date}`)}
+  >
+    week
+  </TabItem>
+  <TabItem>Day</TabItem>
+</Tabs>
+{/* <DateSection today={today} /> */}
+// {status === "loading" ? null : (
+//   <ContentSection>
+//     {dayEvents.length === 0 ? (
+//       <NoEventToday />
+//     ) : (
+//       <>
+//         <SingleEvent
+//           dayEvents={dayEvents}
+//           refreshEvents={getDayEventsAfterDeleteAdd}
+//         />
+//       </>
+//     )}
+//   </ContentSection>
+// )}
+//   </Wrapper>
+// )
+// const Wrapper = styled.div`
+// min-height: 100vh;
+// >>>>>>> 67fbd1625b52e7eaa1a2a66e3184a89910566622
+// // `; */}
 // const Tabs = styled.div`
 //   display: flex;
 //   flex-direction: row;

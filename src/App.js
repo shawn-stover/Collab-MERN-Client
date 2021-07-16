@@ -20,6 +20,7 @@ import jwt from 'jsonwebtoken'
 import CalendarView from './components/calendar/CalendarView';
 import DayView from './components/calendar/day/DayView';
 import WeekView from './components/calendar/week/WeekView';
+import EditEvent from './components/calendar/components/EditEvevnt'
 
 function App() {
   //state holds the user data if the user is logged in
@@ -91,6 +92,10 @@ function App() {
         exact path="/calendar/day"
         component={DayView} />
 
+        <Route
+
+        exact path="/calendar/day/editEvent"
+        component={EditEvent} />
         </Switch>  
       </div>
     </Router>
