@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
+import axios from 'axios'
 import styled from "styled-components";
 import NewEvent from "../components/NewEvent"
 //import DateSection from "./DateSection";
@@ -39,6 +40,35 @@ export default function DayView() {
           })
           .catch((error) => console.log("error!", error));
       };
+
+      const [eventData, setEventData] = useState([])
+
+      useEffect(() => {
+        const getDailyEvents = async () => {
+            try{
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/event`)
+                setEventData(response.data)
+            }catch(error) {
+                console.log(error)
+            }
+        }
+        
+        getDailyEvents()
+        console.log({eventData}, )
+    }, [])
+
+    const eventList = eventData.map((activity, key) => {
+
+      return (
+          <li>
+              {activity.start.time.hours}:{activity.start.time.minutes } { activity.title}
+              <br></br>
+              <br></br>
+          </li>
+      )
+  })
+
+
     return(
         <Wrapper>
           <NewEvent refreshEvents={getDayEventsAfterDeleteAdd} />
@@ -84,7 +114,7 @@ export default function DayView() {
 const Wrapper = styled.div`
   min-height: 100vh;
 
-// `;
+`;
 const Tabs = styled.div`
   display: flex;
   flex-direction: row;
