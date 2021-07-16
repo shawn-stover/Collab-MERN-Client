@@ -1,6 +1,6 @@
 # Welcome to the Falendar App
 
-![screenshot of Falendar](public/img/FalendarScreenShot.png)
+![screenshot of Falendar](public/img/ScreenShot.png)
 
 ### Technologies Used
 Database Structure:
