@@ -33,6 +33,7 @@ export default function CalendarView(props) {
       
     }, [currentMonth]);
     console.log("🍗", monthEvents)
+
     
       const getEventsAfterCreate = async () => {
         setStatus("loading");
@@ -104,7 +105,7 @@ export default function CalendarView(props) {
           </EventsSection>
         </>
       )}
-      
+      <h2>Select a View</h2>
       </Wrapper>
     )
 }  
@@ -199,9 +200,9 @@ const EventTitle = styled.div`
   font-size: 1.4rem;
 `;
 
-{/* <NavIcon>
-          <AiOutlineHome onClick={() => history.push("/")} size={30} />
-        </NavIcon>
-        <NavIcon>
-          <BiArrowBack onClick={() => history.goBack()} size={30} />
-        </NavIcon> */}
+// {/* <NavIcon>
+//           <AiOutlineHome onClick={() => history.push("/")} size={30} />
+//         </NavIcon>
+//         <NavIcon>
+//           <BiArrowBack onClick={() => history.goBack()} size={30} />
+//         </NavIcon> */

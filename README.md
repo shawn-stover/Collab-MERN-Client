@@ -67,3 +67,5 @@ itinerary list on the front landing page
 
 [PDF of wireframes](public/img/Group7.pdf)
 
+## User stories
+Falendar was made with families in mind.  Any family and its members can use Falendar to see what events are planned, and can edit the events as necessary.  Whether it's being used by a super busy family with kids who have lots of extracurriculars, or it's being used by a brand new family who needs to remember things like doctors appointments, Falendar is helpful.  
