@@ -3,7 +3,7 @@ import axios from 'axios'
 import styled from "styled-components";
 import { RightArrow } from '@styled-icons/boxicons-regular/RightArrow'
 
-export default function Itinerary({monthEvents}) {
+export default function Itinerary() {
     const [eventData, setEventData] = useState([])
 
     useEffect(() => {
@@ -17,18 +17,16 @@ export default function Itinerary({monthEvents}) {
         }
         
         getDailyEvents()
-        console.log("🍍")
+        console.log({eventData}, )
     }, [])
 
-console.log("🍕 🍕", monthEvents)
-    const eventList = monthEvents.map((activity, key) => {
+
+    const eventList = eventData.map((activity, key) => {
 
         return (
             <ListItem>
                 <RightArrow size="10"/> 
                 {activity.start.time.hours}:{activity.start.time.minutes } { activity.title}
-                {activity.description}:
-                {activity.start.date}
                 <br></br>
                 <br></br>
             </ListItem>
