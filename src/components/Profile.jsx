@@ -82,8 +82,6 @@ export default function Profile(props) {
                         <h1>Welcome, {props.currentUser.name}👋</h1>
                     </div>
 
-
-
                         {/* <Link to="/calendar">Calendar</Link> 
                         <h5>your email is {props.currentUser.email}</h5> */}
                             <div>
@@ -91,7 +89,6 @@ export default function Profile(props) {
                                         <h2>Today's Schedule:</h2>
                                         <br></br>
                                         <Arrows>
-                                            <Itinerary />
                                         {/* <h3><RightArrow size="10"/><span>1:00pm</span> - Wallow in self pity</h3>
                                         <br></br> 
                                         <h3><RightArrow size="10"/><span>4:30pm</span> - Stare into the abyss</h3>
