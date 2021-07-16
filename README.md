@@ -18,9 +18,13 @@ Fork and clone this repo
 
 run npm i to install dependencies
 
-.env.local will require a connection to  [This repo](https://github.com/EllieLissner/Collab-MERN-Server)
+.env.local will require a connection to [this repo](https://github.com/EllieLissner/Collab-MERN-Server)
 
-You will need an API key from  [Open Weather](https://openweathermap.org/api)  
+You will need an API key from [Open Weather](https://openweathermap.org/api)  
+
+set the keys to your variables in your .env file to 
+    (REACT_APP_SERVER_URL)
+    (REACT_APP_WEATHER_API)
 
 ## Approach
 
