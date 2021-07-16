@@ -4,11 +4,6 @@ import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import Register from './components/Register'
 import Welcome from './components/Welcome'
-
-
-
-
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,6 +19,7 @@ import {
 import jwt from 'jsonwebtoken'
 import CalendarView from './components/calendar/CalendarView';
 import DayView from './components/calendar/day/DayView';
+import WeekView from './components/calendar/week/WeekView';
 
 function App() {
   //state holds the user data if the user is logged in
@@ -84,15 +80,16 @@ function App() {
           render={ props => currentUser ? <Profile {...props} currentUser= {currentUser} handleLogout= {handleLogout}/> : <Redirect to="/login" />}
         />
         <Route 
-
         exact path="/calendar" 
         render={ props => <CalendarView {...props} currentUser= {currentUser}/>} />
+        
+        <Route path="/calendar/weekview" 
+        render={props=> <WeekView {...props} currentUser={currentUser}/>} />
 
+        <Route
 
-        path="/calendar" 
-        // component={CalendarView}
-        // render={ props => currentUser ? <CalendarView {...props} currentUser= {currentUser}/> : <Redirect to="/login" />} />
-                  render={ props => <CalendarView {...props} currentUser= {currentUser}/>} />
+        exact path="/calendar/day"
+        component={DayView} />
 
         </Switch>  
       </div>

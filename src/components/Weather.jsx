@@ -14,7 +14,7 @@ export default function Weather() {
              const response = await axios.get(apiUrl) 
              setWeather(response.data)
              
-             console.log(response.data)
+           
          } catch(error) {
              console.log(error)
          }
