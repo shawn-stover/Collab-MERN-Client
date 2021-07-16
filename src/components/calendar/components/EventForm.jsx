@@ -61,9 +61,11 @@ export default function EventForm({currentUser, closeDialog, refreshEvents }) {
       const CreateEvent = async (event) => {
         try {
           event.preventDefault();
+
           setStatus("loading");
           //console.log(JSON.stringify(form, null, 2))
           const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/createevent`, { ...INITIAL_EVENT, userId: currentUser.id })
+
           console.log(response)
           refreshEvents()
           setStatus("created!")

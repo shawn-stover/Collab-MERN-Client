@@ -3,8 +3,10 @@ import styled, { keyframes } from "styled-components";
 import axios from 'axios'
 import Cal from './Cal'
 import NewEvent from "./components/NewEvent"
-import Itinerary from "./Itinerary";
-import { useHistory, Link } from "react-router-dom";
+
+// import Itinerary from "./Itinerary";
+import { useHistory } from "react-router-dom";
+
 import { format } from "date-fns";
 //import DayView from './day/DayView'
 //import { BiArrowBack } from "react-icons/bi";
@@ -69,7 +71,7 @@ export default function CalendarView(props) {
           </Tabs>
         </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
-      <Itinerary />
+      {/* <Itinerary /> */}
 
       {status === "loading" ? null : (
         <>
@@ -110,10 +112,12 @@ const Wrapper = styled.div`
   background-color: lavenderblush;
   max-width: 1000px;
   margin: auto;
+  margin-top: 60px;
 `;
 
 const TabsWrapper = styled.div`
   display: grid;
+  justify-content: center;
   grid-template-columns: auto 700px;
   grid-template-areas: "- tabs";
 `
@@ -122,7 +126,6 @@ const Tabs = styled.div`
   grid-area: tabs;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
   margin-top: 2px;
   background-color: lightgrey;
 `;

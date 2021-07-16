@@ -1,6 +1,33 @@
-# Getting Started with Create React App
+# Welcome to the Falendar App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![screenshot of Falendar](public/img/FalendarScreenShot.png)
+
+### Technologies Used
+    Database Structure:
+        Mongo/Mongoose
+    Server:
+        Express
+    Front-end Language:
+        React.js
+    Back-end Language:
+        Node.js
+
+### Installation
+
+    Fork and clone this repo
+
+    run npm i to install dependencies
+
+    .env.local will require a connection to your separate server repo 
+
+    You will need an API key from [Open Weather] (https://openweathermap.org/api)
+
+## Approach
+
+    The goal was to make a calendar with easy sharing functionality with the daily itinerary available at a 
+    glance. The easiest way to make this work was with a functioning calendar component that pulls and renders events for the day in a handy list. We also have sharing functionality built right into the add event tab, and you can view those shared events right on your landing page. 
+
+    React was uniquely suited to this challenge with its component based framework. We were able to leverage this functionality to send the daily itinerary to multiple views to keep the viewer organized. Also, any kind of calendar will benefit from being broken into several parts to reduce the lines of code within any one file and also greatly improves organization. 
 
 ## Available Scripts
 

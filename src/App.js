@@ -48,6 +48,7 @@ function App() {
   }
 
   return (
+    <div className='routerContainer'>
     <Router>
       {/* <SignUp_In /> */}
       <header>
@@ -85,7 +86,7 @@ function App() {
         </Switch>  
       </div>
     </Router>
-    
+    </div>
   );
 }
 
