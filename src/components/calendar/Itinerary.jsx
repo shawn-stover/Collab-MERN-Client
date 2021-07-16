@@ -17,11 +17,11 @@ export default function Itinerary({monthEvents}) {
         }
         
         getDailyEvents()
-        console.log("🍍")
+        console.log({eventData}, )
     }, [])
 
 console.log("🍕 🍕", monthEvents)
-    const eventList = monthEvents.map((activity, key) => {
+    const eventList = eventData.map((activity, key) => {
 
         return (
             <ListItem>
