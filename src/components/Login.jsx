@@ -75,6 +75,7 @@ export default function Login(props) {
                 props.setCurrentUser(decoded)
 
             }catch(error) {
+              console.log(error)
                 if (error.response.status === 400) {
                     setMessage(error.response.data.msg)
                 } else {

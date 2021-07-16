@@ -24,9 +24,10 @@ export default function CalendarView(props) {
           try {
             const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/allevents`)
             console.log("👹 👹", response.data)
-            if(response.data.length > 1) {
-              setMonthEvents(response.data)
-            }
+            setMonthEvents(response.data.allEvents)
+            // if(response.data.length > 1) {
+            //   console.log(response.data.length)
+            // }
             console.log("👾👾 ", MonthEvents)
           } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
         }
@@ -72,7 +73,7 @@ export default function CalendarView(props) {
           </Tabs>
         </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
-      <Itinerary />
+      <Itinerary eventData={MonthEvents}/>
 
       {status === "loading" ? null : (
         <>
