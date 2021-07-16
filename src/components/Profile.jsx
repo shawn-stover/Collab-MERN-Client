@@ -88,6 +88,7 @@ export default function Profile(props) {
                                 <Events>
                                         <h2>Today's Schedule:</h2>
                                         <br></br>
+                                        <Itinerary />
                                         <Arrows>
                                         {/* <h3><RightArrow size="10"/><span>1:00pm</span> - Wallow in self pity</h3>
                                         <br></br> 
