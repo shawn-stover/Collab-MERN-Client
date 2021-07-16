@@ -88,12 +88,6 @@ function App() {
         exact path="/calendar" 
         render={ props => <CalendarView {...props} currentUser= {currentUser}/>} />
 
-
-        path="/calendar" 
-        // component={CalendarView}
-        // render={ props => currentUser ? <CalendarView {...props} currentUser= {currentUser}/> : <Redirect to="/login" />} />
-                  render={ props => <CalendarView {...props} currentUser= {currentUser}/>} />
-
         </Switch>  
       </div>
     </Router>

@@ -15,33 +15,23 @@ export default function CalendarView(props) {
     const history = useHistory();
     const [status, setStatus] = useState("loading");
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
-    const [MonthEvents, setMonthEvents] = useState([]);
+    const [monthEvents, setMonthEvents] = useState([]);
 
     const updateCurrentMonth = (month) => setCurrentMonth(month);
 
-    useEffect(() => {
-        setStatus("loading");
-        const getEvents = async () => {
-          //AXIOS .GET ROUTE
-          try {
-            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/allevents`)
-            console.log("👹 👹", response.data)
-            setMonthEvents(response.data.allEvents)
-            // if(response.data.length > 1) {
-            //   console.log(response.data.length)
-            // }
-            console.log("👾👾 ", MonthEvents)
-          } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
-        }
-        getEvents()
-        fetch(`/events/month/${currentMonth}`)
-          .then((res) => res.json())
-          .then((res) => {
-            setMonthEvents(res.data);
-            setStatus("idle")
-         }).catch((error) => console.log("💥error!", error));
-      }, [currentMonth]);
-    
+    useEffect(async () => {
+      setStatus("loading");
+      const getEvents = async () => {
+        //AXIOS .GET ROUTE
+        try {
+          const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/calendar/allevents`)
+          console.log("👹 👹", response.data.allEvents)
+          setMonthEvents(response.data.allEvents)
+        } catch(error) { console.log("ERROR YA LIL SHIT 💩", error)}
+      }
+      getEvents()
+    }, [currentMonth]);
+    console.log("🍗", monthEvents)
     
       const getEventsAfterCreate = async () => {
         setStatus("loading");
@@ -58,9 +48,7 @@ export default function CalendarView(props) {
       };
     return(
       <Wrapper>
-
         <NewEvent refreshEvents={getEventsAfterCreate} currentUser={props.currentUser}/>
-        
         <TabsWrapper>
           <Tabs>
             <TabItem onClick={() => history.push("/calendar-month")}>
@@ -83,12 +71,12 @@ export default function CalendarView(props) {
           </Tabs>
         </TabsWrapper>
       <Cal updateCurrentMonth={updateCurrentMonth} />
-      <Itinerary eventData={MonthEvents}/>
+      <Itinerary monthEvents={monthEvents}/>
 
       {status === "loading" ? null : (
         <>
           <EventsSection>
-            {MonthEvents.map((ev) => (
+            {monthEvents.map((ev) => (
               <EventBox
                 onClick={() =>
                   console.log(`/date/${format(new Date(ev.date), "y-MM-dd")}`)
